@@ -9,6 +9,38 @@
 </head>
 
 <body>
+    <!-- barra de navegacion -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/">UWU</a>
+            </div>
+            <ul class="nav-links desktop-only">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/acerca">Acerca</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+            <button class="menu-btn mobile-only" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu mobile-only">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/acerca">Acerca</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- cierre de la barra -->
+    <!-- carrusel -->
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-content">
@@ -38,6 +70,7 @@
         <button class="carousel-prev">Previous</button>
         <button class="carousel-next">Next</button>
     </div>
+    <!-- fin -->
 
     <script src="/js/index.js"></script>
 </body>

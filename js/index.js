@@ -27,3 +27,19 @@ function updateCarousel() {
     const width = carousel.clientWidth;
     carousel.style.transform = `translateX(-${currentIndex * width}px)`;
 }
+
+
+// barra
+
+const menuBtn = document.querySelector('.menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+});
