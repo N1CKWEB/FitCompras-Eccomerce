@@ -67,6 +67,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    color: #0649ce;
+}
+
 .carousel-prev {
     left: 10px;
 
