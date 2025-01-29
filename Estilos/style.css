@@ -1,35 +1,48 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Madimi+One&display=swap');
+
 .madimi-one-regular {
-  font-family: "Madimi One", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
-:root{
-    --clr-main:#4b33a8;
-    --clr-white:#ececec;
-    --clr-gray:#e2e2e2;
-    --clr-red:#961818;
+:root {
+    --clr-main: #4b33a8;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
 }
-*{
+
+* {
     margin: 0;
     padding: 9;
     box-sizing: border-box;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
-h1,h2,h3,h4,h5,h6,p,a,input,textarea{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+textarea {
     margin: 0;
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-a{
-    text-decoration:  none;
+
+a {
+    text-decoration: none;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -97,39 +110,72 @@ body {
 .login-btn:hover {
     background-color: #c41230;
 }
-
 /* Main Navigation */
 .main-nav {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    padding: 0.5rem 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    background-color: #333;
 }
 
-.main-nav ul {
-    display: flex;
+.menu-horizontal {
     list-style: none;
-    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0;
 }
 
-.main-nav li {
-    flex: 0 0 auto;
+.menu-horizontal>li {
+    position: relative;
 }
 
-.main-nav a {
-    color: #666;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
+.menu-horizontal>li>a {
     display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    white-space: nowrap;
+    transition: background-color 0.3s;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
-    color: #e31837;
+.menu-horizontal>li:hover>a {
+    background-color: #e31837;
+}
+
+/* Submenu (Vertical Menu) */
+.menu-vertical {
+    position: absolute;
+    top: 100%;
+    /* Aligns the submenu below the parent */
+    left: 0;
+    list-style: none;
+    display: none;
+    background-color: #444;
+    min-width: 200px;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+    /* Show submenu on hover */
+}
+
+.menu-vertical li {
+    border-bottom: 1px solid #555;
+}
+
+.menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu-vertical li:hover a {
+    background-color: #e31837;
 }
 
 /* Promotions Grid */
@@ -196,28 +242,33 @@ body {
         grid-template-columns: 1fr;
     }
 }
-main{
+
+main {
     background-color: var(--clr-white);
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
     padding: 3rem;
 }
-.titulo-principal{
+
+.titulo-principal {
     color: var(--clr-red);
     margin-bottom: 2rem;
 
 }
-.contenedor-productos{
- display: grid;
- grid-template-columns: repeat(4,1fr);
- gap: 1rem;
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
-.producto-imagen{
+
+.producto-imagen {
     max-width: 100%;
     border-radius: 1rem;
 }
-.producto-detalles{
+
+.producto-detalles {
     background-color: var(--clr-red);
     color: var(--clr-white);
     padding: .5rem;
@@ -228,10 +279,12 @@ main{
     flex-direction: column;
     gap: .25rem;
 }
-.producto-titulo{
+
+.producto-titulo {
     font-size: 1rem;
 }
-.producto-agregar{
+
+.producto-agregar {
     border: 0;
     background-color: var(--clr-white);
     color: var(--clr-red);
@@ -240,9 +293,10 @@ main{
     border-radius: 2rem;
     cursor: pointer;
     border: 2px solid var(--clr-white);
-    transition: background-color .2s,color .2s;
+    transition: background-color .2s, color .2s;
 }
-.producto-agregar:hover{
-    background-color:#b1b1b1;
+
+.producto-agregar:hover {
+    background-color: #b1b1b1;
     color: var(--clr-red);
 }

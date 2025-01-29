@@ -20,24 +20,55 @@
                 <input type="text" placeholder="¿Qué querés comprar hoy?" class="search-input">
                 <i class="fas fa-search search-icon"></i>
             </div>
-            <button class="login-btn" onclick="location.href='/html/login.html'">Ingresar</button>
+            <button class="login-btn" onclick="location.href='html/login.html'">Ingresar</button>
         </div>
 
         <nav class="main-nav">
-            <ul>
-                <li><a href="#" class="active">Ofertas</a></li>
-                <li><a href="#">Almacén</a></li>
-                <li><a href="#">Bebidas</a></li>
-                <li><a href="#">Frescos</a></li>
-                <li><a href="#">Congelados</a></li>
-                <li><a href="#">Limpieza</a></li>
-                <li><a href="#">Perfumería</a></li>
-                <li><a href="#">Electro</a></li>
-                <li><a href="#">Textil</a></li>
-                <li><a href="#">Hogar</a></li>
-                <li><a href="#">Aire Libre</a></li>
+            <ul class="menu-horizontal">
+                <li><a href="#">Ofertas</a></li>
+                <li>
+                    <a href="#">Almacén</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Conservas</a></li>
+                        <li><a href="#">Cereales</a></li>
+                        <li><a href="#">Aceites</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Bebidas</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Jugos</a></li>
+                        <li><a href="#">Aguas</a></li>
+                        <li><a href="#">Alcohol</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Frescos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Frutas</a></li>
+                        <li><a href="#">Verduras</a></li>
+                        <li><a href="#">Carnes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Congelados</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Helados</a></li>
+                        <li><a href="#">Pescados</a></li>
+                        <li><a href="#">Comidas Congeladas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Limpieza</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Insecticidas</a></li>
+                        <li><a href="#">Papeles</a></li>
+                        <li><a href="#">Desodorante de piso</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
+
 
         <div class="promotions-grid">
             <!-- <div class="promo-column">
