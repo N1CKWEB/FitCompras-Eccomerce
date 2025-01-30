@@ -1,7 +1,11 @@
 package Catalogo.FitCompras.FitCompras.Controller;
 
+import Catalogo.FitCompras.FitCompras.Dto.CreateProductDTO;
+import Catalogo.FitCompras.FitCompras.Dto.ProductDTO;
+import Catalogo.FitCompras.FitCompras.Dto.UpdateProductDTO;
 import Catalogo.FitCompras.FitCompras.Entities.Product;
 import Catalogo.FitCompras.FitCompras.Service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,32 +20,39 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    // Obtener todos los productos
     @GetMapping
-    public List<Product> obtenerTodosLosProductos() {
+    public List<ProductDTO> obtenerTodosLosProductos() {
         return productService.listarProductos();
     }
 
+    // Obtener un producto por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Product> obtenerProductoPorId(@PathVariable Long id) {
-        Optional<Product> producto = productService.obtenerProductoPorId(id);
+    public ResponseEntity<ProductDTO> obtenerProductoPorId(@PathVariable Long id) {
+        Optional<ProductDTO> producto = productService.obtenerProductoPorId(id);
         return producto.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Crear un producto
     @PostMapping
-    public Product crearProducto(@RequestBody Product producto) {
-        return productService.guardarProducto(producto);
+    public ResponseEntity<ProductDTO> crearProducto(@Valid @RequestBody CreateProductDTO createProductDTO) {
+        ProductDTO nuevoProducto = productService.guardarProducto(createProductDTO);
+        return ResponseEntity.ok(nuevoProducto);
     }
 
+    // Actualizar un producto
     @PutMapping("/{id}")
-    public ResponseEntity<Product> actualizarProducto(@PathVariable Long id, @RequestBody Product productoDetalles) {
-        Product productoActualizado = productService.actualizarProducto(id, productoDetalles);
-        return (productoActualizado != null) ? ResponseEntity.ok(productoActualizado) : ResponseEntity.notFound().build();
+    public ResponseEntity<ProductDTO> actualizarProducto(@PathVariable Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO) {
+        Optional<ProductDTO> productoActualizado = productService.actualizarProducto(id, updateProductDTO);
+        return productoActualizado.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Eliminar un producto
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
-        productService.eliminarProducto(id);
-        return ResponseEntity.noContent().build();
+        boolean eliminado = productService.eliminarProducto(id);
+        return eliminado ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }
