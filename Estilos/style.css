@@ -257,17 +257,22 @@ main {
 
 }
 
-.contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
 
 .producto-imagen {
-    max-width: 100%;
+    width: 100%;
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
     border-radius: 1rem;
 }
 
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 productos por fila */
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 .producto-detalles {
     background-color: var(--clr-red);
     color: var(--clr-white);
@@ -299,4 +304,197 @@ main {
 .producto-agregar:hover {
     background-color: #b1b1b1;
     color: var(--clr-red);
+}
+/* ... (previous styles remain unchanged) ... */
+
+main {
+    background-color: var(--clr-white);
+    margin: 1rem auto;
+    border-radius: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+  }
+  
+  .titulo-principal {
+    color: var(--clr-red);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .producto {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .producto:hover {
+    transform: translateY(-5px);
+  }
+  
+  .producto-imagen {
+    width: 100%;
+    height: 200px; /* Reduced height */
+    object-fit: cover;
+  }
+  
+  .producto-detalles {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .producto-titulo {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .producto-precio {
+    font-weight: bold;
+  }
+  
+  .producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-red);
+    padding: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .producto-agregar:hover {
+    background-color: #b1b1b1;
+    color: var(--clr-red);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contenedor-productos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contenedor-productos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Nuevo código */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Madimi+One&display=swap');
+
+:root {
+    --clr-main: #4b33a8;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-width: 320px;
+    background-color: var(--clr-white);
+}
+
+/* Contenedor de productos */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.producto {
+    background-color: var(--clr-white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.producto-detalles {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    max-width: 1300px;
+    max-height:200px;
+}
+
+.producto-titulo {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.producto-precio {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-red);
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: bold;
+}
+
+.producto-agregar:hover {
+    background-color: #b1b1b1;
+    color: var(--clr-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
 }
