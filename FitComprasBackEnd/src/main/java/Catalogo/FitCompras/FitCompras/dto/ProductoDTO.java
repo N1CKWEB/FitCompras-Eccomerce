@@ -1,6 +1,6 @@
-package Catalogo.FitCompras.FitCompras.Dto;
+package Catalogo.FitCompras.FitCompras.dto;
 
-import Catalogo.FitCompras.FitCompras.Entities.SubCategoria;
+import Catalogo.FitCompras.FitCompras.entities.SubCategoria;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

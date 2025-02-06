@@ -1,4 +1,4 @@
-package Catalogo.FitCompras.FitCompras.Dto;
+package Catalogo.FitCompras.FitCompras.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

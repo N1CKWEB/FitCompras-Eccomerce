@@ -1,9 +1,9 @@
-package Catalogo.FitCompras.FitCompras.Service;
+package Catalogo.FitCompras.FitCompras.service;
 
-import Catalogo.FitCompras.FitCompras.Dto.CategoriaDTO;
-import Catalogo.FitCompras.FitCompras.Entities.Categoria;
-import Catalogo.FitCompras.FitCompras.Repositories.CategoriaRepository;
-import Catalogo.FitCompras.FitCompras.Util.ResourceNotFoundException;
+import Catalogo.FitCompras.FitCompras.dto.CategoriaDTO;
+import Catalogo.FitCompras.FitCompras.entities.Categoria;
+import Catalogo.FitCompras.FitCompras.repositories.CategoriaRepository;
+import Catalogo.FitCompras.FitCompras.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

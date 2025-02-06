@@ -1,15 +1,17 @@
-package Catalogo.FitCompras.FitCompras.Entities;
+package Catalogo.FitCompras.FitCompras.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class SubCategoria {
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +19,6 @@ public class SubCategoria {
 
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    private List<SubCategoria> subCategorias;
 }

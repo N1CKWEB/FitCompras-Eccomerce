@@ -1,7 +1,7 @@
-package Catalogo.FitCompras.FitCompras.Controller;
+package Catalogo.FitCompras.FitCompras.controller;
 
-import Catalogo.FitCompras.FitCompras.Dto.ProductoDTO;
-import Catalogo.FitCompras.FitCompras.Service.ProductoService;
+import Catalogo.FitCompras.FitCompras.dto.ProductoDTO;
+import Catalogo.FitCompras.FitCompras.service.ProductoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

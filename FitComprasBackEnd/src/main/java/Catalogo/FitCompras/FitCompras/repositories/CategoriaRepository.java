@@ -1,6 +1,6 @@
-package Catalogo.FitCompras.FitCompras.Repositories;
+package Catalogo.FitCompras.FitCompras.repositories;
 
-import Catalogo.FitCompras.FitCompras.Entities.Categoria;
+import Catalogo.FitCompras.FitCompras.entities.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
