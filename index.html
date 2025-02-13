@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,259 +8,61 @@
     <link rel="stylesheet" href="/Estilos/style.css">
     <script src="/Dinamica/app.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-
 <body>
+    
     <div id="productos" class="productos-grid"></div>
     <div id="paginacion" class="paginacion"></div>
-    <header>
+    <header >
         <div class="top-nav">
-            <div href="/index.html" class="logo">FitCompras</div>
+            <div class="logo-principal"><a class="logo" href="/index.html">FitCompras</a></div>
             <div class="search-container">
                 <input type="text" placeholder="¿Qué querés comprar hoy?" class="search-input">
                 <i class="fas fa-search search-icon"></i>
             </div>
             <button class="login-btn" onclick="location.href='html/login.html'">Ingresar</button>
         </div>
-
-        <nav class="main-nav">
-            <ul class="menu-horizontal">
-                <li><a href="#">Ofertas</a></li>
-                <li>
-                    <a href="html/Almacen/almacen.html">Almacén</a>
-                    <ul class="menu-vertical">
-                        <li><a href="/html/Almacen/conservas.html">Conservas</a></li>
-                        <li><a href="/html/Almacen/cereales.html">Cereales</a></li>
-                        <li><a href="/html/Almacen/aceites.html">Aceites</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/html/Bebidas/bebidas.html">Bebidas</a>
-                    <ul class="menu-vertical">
-                        <li><a href="/html/Bebidas/jugos.html">Jugos</a></li>
-                        <li><a href="/html/Bebidas/aguas.html">Aguas</a></li>
-                        <li><a href="/html/Bebidas/alcohol.html">Alcohol</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/html/Frescos/frescos.html">Frescos</a>
-                    <ul class="menu-vertical">
-                        <li><a href="/html/Frescos/frutas.html">Frutas</a></li>
-                        <li><a href="/html/Frescos/verduras.html">Verduras</a></li>
-                        <li><a href="/html/Frescos/carnes.html">Carnes</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/html/Congelados/congelados.html">Congelados</a>
-                    <ul class="menu-vertical">
-                        <li><a href="/html/Congelados/helados.html">Helados</a></li>
-                        <li><a href="/html/Congelados/pescados.html">Pescados</a></li>
-                        <li><a href="/html/Congelados/comidasCongeladas.html">Comidas Congeladas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/html/Limpieza/limpieza.html">Limpieza</a>
-                    <ul class="menu-vertical">
-                        <li><a href="/html/Limpieza/insecticidas.html">Insecticidas</a></li>
-                        <li><a href="/html/Limpieza/papeles.html">Papeles</a></li>
-                        <li><a href="/html/Limpieza/desodorantes.html">Desodorantes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2 class="titulo-principal">Todos los productos</h2>
-        <section class="contenedor-productos">
-            
-            <div class="producto" data-nombre="Granola Granix" data-precio="6543">
-                <img src="img/Almacén/Cereales/img1.webp" alt="Granola Granix" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Cereales</h3>
-                    <p class="producto-precio">$6543</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
+    
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/img/Edit.org_design_13-02-06--55.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/Agregar un título.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/img/Congelados/Helados/img1.jpeg" class="d-block w-100" alt="...">
+              </div>
             </div>
-            
-            <div class="producto" data-nombre="Alfajor MILKA Oreo" data-precio="1630">
-                <img src="img/Almacén/Cereales/img2.jpg" alt="Alfajor MILKA Oreo" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Triple MILKA Oreo 61g</h3>
-                    <p class="producto-precio">$1630</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
+          </div>                     
+          <br>
+        <div class="ofertas-principal">
+            <div class="ofertas-limpiezas">
+                <img src="" alt="">
             </div>
-            
-            <div class="producto" data-nombre="Alfajor JORGITO Fruta" data-precio="5613.99">
-                <img src="img/Almacén/Cereales/img3.avif" alt="Alfajor JORGITO Fruta" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor De Fruta 6u JORGITO 300g</h3>
-                    <p class="producto-precio">$5.613,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
+           
+            <div class="ofertas-limpiezas">
+                <img src="" alt="">
             </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img4.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
+           
+            <div class="ofertas-limpiezas">
+                <img src="" alt="">
             </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img5.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
+           
+            <div class="ofertas-limpiezas">
+                <img src="" alt="">
             </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img6.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img7.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img8.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img9.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img10.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img11.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img12.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img13.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img14.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img15.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img16.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img17.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img18.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img19.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img20.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-
-        </section>
-        
-
-    </main>
+           
+            <div></div>
+        </div>
+ 
 </body>
 
 </html>
