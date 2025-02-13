@@ -272,8 +272,8 @@
             const searchTerm = searchInput.value.toLowerCase();
 
             productos.forEach(producto => {
-                const nombre = producto.getAttribute('data-nombre').toLowerCase();
-                if (nombre.includes(searchTerm)) {
+                const titulo = producto.querySelector('.producto-titulo').textContent.toLowerCase();
+                if (titulo.includes(searchTerm)) {
                     producto.style.display = 'block';
                 } else {
                     producto.style.display = 'none'
