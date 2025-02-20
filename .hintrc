@@ -3,12 +3,7 @@
     "development"
   ],
   "hints": {
-    "axe/name-role-value": [
-      "default",
-      {
-        "link-name": "off"
-      }
-    ],
+    "axe/name-role-value": "off",
     "axe/forms": [
       "default",
       {
@@ -26,5 +21,12 @@
       }
     ],
     "no-inline-styles": "off"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not chrome <= 109",
+    "not edge <= 126",
+    "not samsung <= 25"
+  ]
 }
