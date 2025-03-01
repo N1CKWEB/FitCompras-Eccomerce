@@ -20,7 +20,13 @@
         "html-has-lang": "off"
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id": "off"
+      }
+    ]
   },
   "browserslist": [
     "defaults",

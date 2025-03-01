@@ -28,6 +28,51 @@
             </div>
             <button class="login-btn" onclick="location.href='./html/login.html'">Ingresar</button>
         </div>
+         <nav class="main-nav">
+            <ul class="menu-horizontal">
+                <li><a href="#">Ofertas</a></li>
+                <li>
+                    <a href="/html/Almacen/almacen.html">Almacén</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Almacen/conservas.html">Conservas</a></li>
+                        <li><a href="/html/Almacen/cereales.html">Cereales</a></li>
+                        <li><a href="/html/Almacen/aceites.html">Aceites</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Bebidas/bebidas.html">Bebidas</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Bebidas/jugos.html">Jugos</a></li>
+                        <li><a href="/html/Bebidas/aguas.html">Aguas</a></li>
+                        <li><a href="/html/Bebidas/alcohol.html">Alcohol</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Frescos/frescos.html">Frescos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Frescos/frutas.html">Frutas</a></li>
+                        <li><a href="/html/Frescos/verduras.html">Verduras</a></li>
+                        <li><a href="/html/Frescos/carnes.html">Carnes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Congelados/congelados.html">Congelados</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Congelados/helados.html">Helados</a></li>
+                        <li><a href="/html/Congelados/pescados.html">Pescados</a></li>
+                        <li><a href="/html/Congelados/comidasCongeladas.html">Comidas Congeladas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Limpieza/limpieza.html">Limpieza</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Limpieza/insecticidas.html">Insecticidas</a></li>
+                        <li><a href="/html/Limpieza/papeles.html">Papeles</a></li>
+                        <li><a href="/html/Limpieza/desodorantes.html">Desodorantes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     <div class="carousel-wrapper">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -82,13 +127,217 @@
           <div class="descuento-container">
             <h2 class="title">Descuento vigentes comprando los días:</h2>
             <div class="descuentos-btn-container">
-              <button class="date-button">Jueves 20</button>
-              <button class="date-button">Viernes 21</button>
-              <button class="date-button">Sabado 22</button>
-              <button class="date-button">Domingo 23</button>
-              <button class="date-button">Lunes 24</button>
-              <button class="date-button">Martes 25</button>
-              <button class="date-button">Miercoles 26</button>
+              <button class="date-button" onclick="mostrarDescuentos('jueves')">Jueves 20</button>
+              <button class="date-button" onclick="mostrarDescuentos('viernes')">Viernes 21</button>
+              <button class="date-button" onclick="mostrarDescuentos('sabado')">Sabado 22</button>
+              <button class="date-button" onclick="mostrarDescuentos('domingo')">Domingo 23</button>
+              <button class="date-button" onclick="mostrarDescuentos('lunes')">Lunes 24</button>
+              <button class="date-button" onclick="mostrarDescuentos('martes')">Martes 25</button>
+              <button class="date-button" onclick="mostrarDescuentos('miercoles')">Miercoles 26</button>
+            </div>
+            
+            <!-- Contenedor para los bancos de Jueves -->
+            <div id="jueves-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Jueves</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_comafi.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Jueves</p>
+                  <p class="banco-cuotas">15 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro y hogar.</p>
+                  <p class="banco-condiciones">3-6-9-12-15 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Viernes -->
+            <div id="viernes-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_club_lanacion_11.png" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Viernes</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">6-12-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_galicia.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Viernes</p>
+                  <p class="banco-cuotas">9 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Sábado -->
+            <div id="sabado-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_nacion_d.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado y Domingo</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_naranjax_planz.gif" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">6-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_sol.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro, hogar y textil.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Domingo -->
+            <div id="domingo-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado y Domingo</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/uala.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Domingo</p>
+                  <p class="banco-cuotas">24 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18-24 cuotas sin interés con tarjetas de crédito Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+                  
+        <!-- Contenedor para los bancos de Lunes -->
+        <div id="lunes-bancos" class="bancos-grid dia-bancos">
+          <div class="banco-card">
+            <div class="banco-logo">
+              <img src="/img/Bancos/logo_supervielle.png" alt="Club La Nación">
+            </div>
+            <div class="banco-info">
+              <p class="banco-dias">Lunes</p>
+              <p class="banco-cuotas">6 cuotas sin interés</p>
+              <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+              <p class="banco-condiciones">3-6 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+            </div>
+          </div>
+          
+          <!-- Added second bank card for Lunes -->
+          <div class="banco-card">
+            <div class="banco-logo">
+              <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+            </div>
+            <div class="banco-info">
+              <p class="banco-dias">Lunes</p>
+              <p class="banco-cuotas">12 cuotas sin interés</p>
+              <p class="banco-productos">en productos seleccionados de electrodomésticos y hogar.</p>
+              <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+            </div>
+          </div>
+        </div>
+
+            
+            <!-- Contenedor para los bancos de Martes -->
+            <div id="martes-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_galicia.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Martes</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro y hogar.</p>
+                  <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_nacion_d.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Martes</p>
+                  <p class="banco-cuotas">9 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Miércoles -->
+            <div id="miercoles-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_club_lanacion_11.png" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Miércoles</p>
+                  <p class="banco-cuotas">15 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_comafi.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Miércoles</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro, hogar y textil.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
