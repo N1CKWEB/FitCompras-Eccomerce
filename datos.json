@@ -1,0 +1,13 @@
+
+    [
+        {"pregunta": "Hola", "respuesta": "¡Hola! Bienvenido a FitCompras, ¿en qué podemos ayudarte hoy?"},
+        {"pregunta": "Buenos días", "respuesta": "¡Buenos días! Somos FitCompras, ¿en qué podemos asistirte?"},
+        {"pregunta": "Buenas tardes", "respuesta": "¡Buenas tardes! ¿Cómo podemos ayudarte en FitCompras?"},
+        {"pregunta": "Buenas noches", "respuesta": "¡Buenas noches! Si necesitas ayuda, estamos aquí para responder tus preguntas."},
+    
+        {"pregunta": "Gracias", "respuesta": "¡De nada! Si necesitas algo más, no dudes en preguntar."},
+        {"pregunta": "Adiós", "respuesta": "¡Hasta pronto! Esperamos verte de nuevo en FitCompras."},
+        {"pregunta": "Nos vemos", "respuesta": "¡Nos vemos! Que tengas un excelente día."},
+        {"pregunta": "Chao", "respuesta": "¡Chao! Recuerda que siempre estamos aquí para ayudarte."}
+    ]
+    

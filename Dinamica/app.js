@@ -110,3 +110,31 @@ function mostrarProductos(productos) {
         contenedor.appendChild(div);
     });
 }
+// Función para mostrar los descuentos según el día seleccionado
+function mostrarDescuentos(dia) {
+    // Ocultar todos los contenedores de bancos
+    const contenedoresBancos = document.querySelectorAll('.dia-bancos');
+    contenedoresBancos.forEach(contenedor => {
+      contenedor.classList.remove('active');
+    });
+    
+    // Mostrar el contenedor del día seleccionado
+    const contenedorSeleccionado = document.getElementById(dia + '-bancos');
+    if (contenedorSeleccionado) {
+      contenedorSeleccionado.classList.add('active');
+    }
+    
+    // Actualizar el estado activo de los botones
+    const botones = document.querySelectorAll('.date-button');
+    botones.forEach(boton => {
+      boton.classList.remove('active');
+      if (boton.textContent.toLowerCase().includes(dia)) {
+        boton.classList.add('active');
+      }
+    });
+  }
+  
+  // Mostrar los descuentos del primer día por defecto cuando carga la página
+  document.addEventListener('DOMContentLoaded', function() {
+    mostrarDescuentos('jueves');
+  });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,28 +8,31 @@
     <link rel="stylesheet" href="/Estilos/style.css">
     <script src="/Dinamica/app.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-
 <body>
+    
     <div id="productos" class="productos-grid"></div>
     <div id="paginacion" class="paginacion"></div>
-    <header>
+    <header >
         <div class="top-nav">
-            <div href="/index.html" class="logo">FitCompras</div>
+            <div class="logo-principal"><a class="logo" href="/index.html">FitCompras</a></div>
             <div class="search-container">
                 <input type="text" placeholder="¿Qué querés comprar hoy?" class="search-input">
                 <i class="fas fa-search search-icon"></i>
             </div>
-            <button class="login-btn" onclick="location.href='html/login.html'">Ingresar</button>
+            <button class="login-btn" onclick="location.href='./html/login.html'">Ingresar</button>
         </div>
-
-        <nav class="main-nav">
+         <nav class="main-nav">
             <ul class="menu-horizontal">
                 <li><a href="#">Ofertas</a></li>
                 <li>
-                    <a href="html/Almacen/almacen.html">Almacén</a>
+                    <a href="/html/Almacen/almacen.html">Almacén</a>
                     <ul class="menu-vertical">
                         <li><a href="/html/Almacen/conservas.html">Conservas</a></li>
                         <li><a href="/html/Almacen/cereales.html">Cereales</a></li>
@@ -70,197 +73,365 @@
                 </li>
             </ul>
         </nav>
-    </header>
-
-    <main>
-        <h2 class="titulo-principal">Todos los productos</h2>
-        <section class="contenedor-productos">
-            
-            <div class="producto" data-nombre="Granola Granix" data-precio="6543">
-                <img src="img/Almacén/Cereales/img1.webp" alt="Granola Granix" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Cereales</h3>
-                    <p class="producto-precio">$6543</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Alfajor MILKA Oreo" data-precio="1630">
-                <img src="img/Almacén/Cereales/img2.jpg" alt="Alfajor MILKA Oreo" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Triple MILKA Oreo 61g</h3>
-                    <p class="producto-precio">$1630</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Alfajor JORGITO Fruta" data-precio="5613.99">
-                <img src="img/Almacén/Cereales/img3.avif" alt="Alfajor JORGITO Fruta" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor De Fruta 6u JORGITO 300g</h3>
-                    <p class="producto-precio">$5.613,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img4.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img5.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img6.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img7.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img8.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img9.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img10.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img11.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img12.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img13.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img14.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img15.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-            
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img16.jpeg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img17.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img18.webp" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img19.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-            <div class="producto" data-nombre="Nesquik Choco" data-precio="1284.99">
-                <img src="img/Almacén/Cereales/img20.jpg" alt="Nesquik Choco" class="producto-imagen">
-                <div class="producto-detalles">
-                    <h3 class="producto-titulo">Alfajor Choc. Triple Tofi Paq 73 Grm</h3>
-                    <p class="producto-precio">$1.284,99</p>
-                    <button class="producto-agregar">Agregar</button>
-                </div>
-            </div>
-
-
-        </section>
+    <div class="carousel-wrapper">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-image-wrapper">
+          <img src="/img/Edit.org_design_13-02-06--55.jpg" class="carousel-image" alt="Slide 1">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-image-wrapper">
+          <img src="img/Ofertas/Carrusel1.png" class="carousel-image" alt="Slide 2">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-image-wrapper">
+          <img src="/img/Ofertas/Carrusel2.png" class="carousel-image" alt="Slide 3">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
         
+          <br>
+        <div class="ofertas-principal">
+            <div class="ofertas-bebidas">
+                <img src="/img/Ofertas/1.png" alt="">
+            </div>
+           
+            <div class="ofertas-congelados">
+                <img src="/img/Ofertas/2.png" alt="">
+            </div>
+           
+            <div class="ofertas-frescos">
+                <img src="/img/Ofertas/3.png" alt="">
+            </div>
+           
+            <div class="ofertas-limpiezas">
+                <img src="/img/Ofertas/4.png" alt="">
+            </div>
+           
+            <div></div>
+        </div>
+        <div class="descuento-class-principal">
+          <div class="descuento-container">
+            <h2 class="title">Descuento vigentes comprando los días:</h2>
+            <div class="descuentos-btn-container">
+              <button class="date-button" onclick="mostrarDescuentos('jueves')">Jueves 20</button>
+              <button class="date-button" onclick="mostrarDescuentos('viernes')">Viernes 21</button>
+              <button class="date-button" onclick="mostrarDescuentos('sabado')">Sabado 22</button>
+              <button class="date-button" onclick="mostrarDescuentos('domingo')">Domingo 23</button>
+              <button class="date-button" onclick="mostrarDescuentos('lunes')">Lunes 24</button>
+              <button class="date-button" onclick="mostrarDescuentos('martes')">Martes 25</button>
+              <button class="date-button" onclick="mostrarDescuentos('miercoles')">Miercoles 26</button>
+            </div>
+            
+            <!-- Contenedor para los bancos de Jueves -->
+            <div id="jueves-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Jueves</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_comafi.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Jueves</p>
+                  <p class="banco-cuotas">15 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro y hogar.</p>
+                  <p class="banco-condiciones">3-6-9-12-15 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Viernes -->
+            <div id="viernes-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_club_lanacion_11.png" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Viernes</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">6-12-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_galicia.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Viernes</p>
+                  <p class="banco-cuotas">9 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Sábado -->
+            <div id="sabado-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_nacion_d.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado y Domingo</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_naranjax_planz.gif" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">6-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_sol.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro, hogar y textil.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Domingo -->
+            <div id="domingo-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Sabado y Domingo</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/uala.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Domingo</p>
+                  <p class="banco-cuotas">24 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18-24 cuotas sin interés con tarjetas de crédito Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+                  
+        <!-- Contenedor para los bancos de Lunes -->
+        <div id="lunes-bancos" class="bancos-grid dia-bancos">
+          <div class="banco-card">
+            <div class="banco-logo">
+              <img src="/img/Bancos/logo_supervielle.png" alt="Club La Nación">
+            </div>
+            <div class="banco-info">
+              <p class="banco-dias">Lunes</p>
+              <p class="banco-cuotas">6 cuotas sin interés</p>
+              <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+              <p class="banco-condiciones">3-6 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+            </div>
+          </div>
+          
+          <!-- Added second bank card for Lunes -->
+          <div class="banco-card">
+            <div class="banco-logo">
+              <img src="/img/Bancos/logo_ciudad1.png" alt="Banco Ciudad">
+            </div>
+            <div class="banco-info">
+              <p class="banco-dias">Lunes</p>
+              <p class="banco-cuotas">12 cuotas sin interés</p>
+              <p class="banco-productos">en productos seleccionados de electrodomésticos y hogar.</p>
+              <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+            </div>
+          </div>
+        </div>
 
-    </main>
-</body>
+            
+            <!-- Contenedor para los bancos de Martes -->
+            <div id="martes-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_galicia.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Martes</p>
+                  <p class="banco-cuotas">12 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro y hogar.</p>
+                  <p class="banco-condiciones">3-6-9-12 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_nacion_d.png" alt="Banco Ciudad">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Martes</p>
+                  <p class="banco-cuotas">9 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9 cuotas sin interés con tarjetas de crédito Visa. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenedor para los bancos de Miércoles -->
+            <div id="miercoles-bancos" class="bancos-grid dia-bancos">
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_club_lanacion_11.png" alt="Club La Nación">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Miércoles</p>
+                  <p class="banco-cuotas">15 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados de electrodomésticos.</p>
+                  <p class="banco-condiciones">3-6-9-12-15 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+              
+              <div class="banco-card">
+                <div class="banco-logo">
+                  <img src="/img/Bancos/logo_comafi.png" alt="Banco Comafi">
+                </div>
+                <div class="banco-info">
+                  <p class="banco-dias">Miércoles</p>
+                  <p class="banco-cuotas">18 cuotas sin interés</p>
+                  <p class="banco-productos">en productos seleccionados electro, hogar y textil.</p>
+                  <p class="banco-condiciones">3-6-9-12-15-18 cuotas sin interés con tarjetas de crédito Visa y Mastercard. Vigencia desde el 01/03 al 31/03. Aplican exclusiones. Ver legales.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <footer class="footer">
+          <div class="footer-container">
+            <!-- Categorías -->
+            <div class="footer-column">
+              <h3>Categorías</h3>
+              <ul>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Lácteos</a></li>
+                <li><a href="#">Bebidas</a></li>
+                <li><a href="#">Congelados</a></li>
+                <li><a href="#">Limpieza</a></li>
+                <li><a href="#">Perfumería</a></li>
+                <li><a href="#">Electros</a></li>
+                <li><a href="#">Textil</a></li>
+                <li><a href="#">Hogar</a></li>
+              </ul>
+            </div>
+        
+            <!-- Sobre Nosotros -->
+            <div class="footer-column">
+              <h3>Sobre Nosotros</h3>
+              <ul>
+                <li><a href="#">Conocenos</a></li>
+                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="#">Nuestras Sucursales</a></li>
+                <li><a href="#">Sumate a Nuestra Comunidad</a></li>
+                <li><a href="#">Beneficios de Comunidad</a></li>
+                <li><a href="#">Web de Comunidad</a></li>
+              </ul>
+            </div>
+        
+            <!-- Servicio al Cliente -->
+            <div class="footer-column">
+              <h3>Servicio al Cliente</h3>
+              <div class="service-buttons">
+                <button class="service-btn">Libro de Quejas Online</button>
+                <button class="service-btn">Botón de Arrepentimiento</button>
+                <button class="service-btn">Botón de Baja</button>
+              </div>
+              <ul>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+              </ul>
+            </div>
+        
+            <!-- Contáctanos -->
+            <div class="footer-column">
+              <h3>Contáctanos</h3>
+              <p class="schedule">Horario de atención: Lunes a Viernes de 8:00 a 22:00 hs y Sábados de 8hs a 18:00hs.</p>
+              <div class="contact-info">
+                <p class="phone"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-email.png" alt=""> </i>0810-888-2686</p>
+                <p class="email"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-telefono.png" alt=""></i>ayuda_fitCompras@compras.com.ar</p>
+                <p class="whatsapp">
+                  <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_whatsapp.png" alt="">
+                  <span>+54 9 1126412851</span>  
+                  <span>WhatsApp Exclusivo de Fit-Compras</span>
+                </p>
+              </div>
+              <div class="social-section">
+                <p>¡Seguinos!</p>
+                <p>Enterate de las promos y novedades.</p>
+                <div class="social-icons">
+                  <a href="">
+                    <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_instagram.png" alt="">
+                  </a>
+                  <a href="">
+                    <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_facebook.png" alt="">
+                  </a>
+                  <a href="">
+                    <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_twitter.png" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <hr>
+        <p  class="footer-derechos">2025 | Todos los derechos reservados - FitCompras.</p>
+        <div id="chatbot-container" style="display: none;">
+          <div id="messages">
+            <!-- Los mensajes aparecerán aquí -->
+          </div>
+          <div class="input-container">
+            <input type="text" id="user-input" placeholder="Escribe aquí...">
+            <button onclick="sendMessage()">Enviar</button>
+          </div>
+        </div>
+        <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+
+<script src="Dinamica/buscador.js"></script>
+<script src="/Dinamica/chatBot.js"></script>
 
 </html>
