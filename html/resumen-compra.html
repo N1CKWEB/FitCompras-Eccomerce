@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Compra</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6 mt-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Resumen de Compra</h2>
+
+        <!-- Tabla de productos -->
+        <table class="min-w-full table-auto border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2 text-left">Producto</th>
+                    <th class="border px-4 py-2 text-left">Precio</th>
+                    <th class="border px-4 py-2 text-left">Cantidad</th>
+                    <th class="border px-4 py-2 text-left">Total</th>
+                </tr>
+            </thead>
+            <tbody id="productos-tabla">
+                <!-- Los productos se agregarán mediante JS -->
+            </tbody>
+        </table>
+
+        <div class="mt-4 text-right">
+            <button id="btn-finalizar" class="btn btn-primary">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="/Dinamica/carrito.js"></script>
+    <script src="/Dinamica/resumen-compra.js"></script>
+</body>
+
+</html>
