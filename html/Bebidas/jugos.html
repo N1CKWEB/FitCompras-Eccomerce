@@ -272,9 +272,21 @@
 
         </section>
 
+        <!-- Carrito de compras -->
+        <div class="cart fixed bottom-0 right-0 p-6 bg-white shadow-lg rounded-lg carrito">
+            <h2 class="text-xl font-semibold mb-4">Carrito de Compras</h2>
+            <ul id="cart-items" class="mb-4"></ul>
+            <div class="flex justify-between items-center">
+                <span class="text-lg font-semibold">Total: $<span id="cart-total">0.00</span></span>
+                <button id="btn-comprar" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+
 
     </main>
 </body>
 <script src="/Dinamica/buscador.js"></script>
+<script src="/Dinamica/carrito.js"></script>
+<script src="/Dinamica/resumen-compra.js"></script>
 
 </html>
