@@ -18,8 +18,9 @@ public class Producto {
     private String nombre;
     private Double precio;
 
-    @Lob
-    private String imagenBase64;
+
+    private String imagenUrl; // ruta o URL donde se almacena la imagen
+
 
     @ManyToOne
     private SubCategoria subCategoria;
