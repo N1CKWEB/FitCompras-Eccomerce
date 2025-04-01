@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitCompras</title>
     <link rel="stylesheet" href="/Estilos/style.css">
-
     <script src="/Dinamica/app.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -74,22 +73,23 @@
                 </li>
             </ul>
         </nav>
-    <div class="carousel-wrapper">
+        
+  <div class="carousel-wrapper">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="carousel-image-wrapper">
-          <img src="/img/Edit.org_design_13-02-06--55.jpg" class="carousel-image" alt="Slide 1">
+          <img src="/img/Ofertas/CartelOfertas.jpg" class="carousel-image" alt="Slide 1">
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-wrapper">
-          <img src="img/Ofertas/Carrusel1.png" class="carousel-image" alt="Slide 2">
+          <img src="img/Ofertas/Carrusel1Original.png" class="carousel-image" alt="Slide 2">
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-wrapper">
-          <img src="/img/Ofertas/Carrusel2.png" class="carousel-image" alt="Slide 3">
+          <img src="/img/Ofertas/Carrusel2Original.png" class="carousel-image" alt="Slide 3">
         </div>
       </div>
     </div>
@@ -101,9 +101,46 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
-</div>
-        
+   </div>
+   </div>
+
+    <!-- PRODUCTOS EN OFERTAS  -->
+       <!-- <div>
+         <p>!Ofertas en Rodados!</p>
+       </div>
+       <div>
+                    
+        <div class="producto" data-nombre="Aceite oliva fuso 5lts" data-precio="5284.99">
+          <img src="/img/Almacén/Aceites/img4.jpeg" alt="Aceite oliva fuso" class="producto-imagen">
+          <div class="producto-detalles">
+              <h3 class="producto-titulo">Aceite oliva fuso 5lts</h3>
+              <p class="producto-precio">$5.284,99</p>
+              <button class="producto-agregar">Agregar</button>
+          </div>
+
+
+          <div class="producto" data-nombre="Aceite oliva fuso 5lts" data-precio="5284.99">
+            <img src="/img/" alt="Aceite oliva fuso" class="producto-imagen">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Aceite oliva fuso 5lts</h3>
+                <p class="producto-precio">$5.284,99</p>
+                <button class="producto-agregar">Agregar</button>
+            </div>
+
+
+            
+        <div class="producto" data-nombre="Aceite oliva fuso 5lts" data-precio="5284.99">
+          <img src="/img/Almacén/Aceites/img4.jpeg" alt="Aceite oliva fuso" class="producto-imagen">
+          <div class="producto-detalles">
+              <h3 class="producto-titulo">Aceite oliva fuso 5lts</h3>
+              <p class="producto-precio">$5.284,99</p>
+              <button class="producto-agregar">Agregar</button>
+          </div>
+
+      </div>
+       </div>
+    </div>          -->
+
           <br>
         <div class="ofertas-principal">
             <div class="ofertas-bebidas">
@@ -343,21 +380,18 @@
           </div>
         </div>
         <br>
+
         <footer class="footer">
           <div class="footer-container">
             <!-- Categorías -->
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Lácteos</a></li>
-                <li><a href="#">Bebidas</a></li>
-                <li><a href="#">Congelados</a></li>
-                <li><a href="#">Limpieza</a></li>
-                <li><a href="#">Perfumería</a></li>
-                <li><a href="#">Electros</a></li>
-                <li><a href="#">Textil</a></li>
-                <li><a href="#">Hogar</a></li>
+                <li><a href="/html/Almacen/almacen.html">Almacen</a></li>
+                <li><a href="/html/Bebidas/bebidas.html">Bebidas</a></li>
+                <li><a href="/html/Congelados/congelados.html">Congelados</a></li>
+                <li><a href="/html/Frescos/frescos.html">Frescos</a></li>
+                <li><a href="/html/Limpieza/limpieza.html">Limpieza</a></li>
               </ul>
             </div>
         
@@ -365,8 +399,7 @@
             <div class="footer-column">
               <h3>Sobre Nosotros</h3>
               <ul>
-                <li><a href="#">Conocenos</a></li>
-                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="/html/Información/conocenos.html">Conocenos</a></li>
                 <li><a href="#">Nuestras Sucursales</a></li>
                 <li><a href="#">Sumate a Nuestra Comunidad</a></li>
                 <li><a href="#">Beneficios de Comunidad</a></li>
@@ -378,27 +411,30 @@
             <div class="footer-column">
               <h3>Servicio al Cliente</h3>
               <div class="service-buttons">
-                <button class="service-btn">Libro de Quejas Online</button>
-                <button class="service-btn">Botón de Arrepentimiento</button>
-                <button class="service-btn">Botón de Baja</button>
+                <a href="/html/Información/">
+                  <button class="service-btn">Libro de Quejas Online</button>
+                </a>
+                <a href="/html/Información/FAQ.html">
+                  <button class="service-btn" >Preguntas Frecuentes </button>
+                </a>
+                <a href="/html/Información/TerminosYcondiciones.html">
+                  <button class="service-btn">Terminos Y Condiciones</button>
+                </a>
               </div>
               <ul>
-                <li><a href="#">Preguntas Frecuentes</a></li>
-                <li><a href="#">Términos y Condiciones</a></li>
               </ul>
             </div>
         
             <!-- Contáctanos -->
             <div class="footer-column">
               <h3>Contáctanos</h3>
-              <p class="schedule">Horario de atención: Lunes a Viernes de 8:00 a 22:00 hs y Sábados de 8hs a 18:00hs.</p>
+              <p class="schedule">Horario de atención: Lunes a Viernes de <b>8:00</b> a <b>22:00 hs</b> y Sábados de <b>8hs</b> a <b>18:00hs</b>.</p>
               <div class="contact-info">
-                <p class="phone"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-email.png" alt=""> </i>0810-888-2686</p>
-                <p class="email"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-telefono.png" alt=""></i>ayuda_fitCompras@compras.com.ar</p>
+                <p class="phone"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-email.png" alt="">261-616-0056</i></p>
+                <p class="email"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-telefono.png" alt="">fitcompras@gmail.com</i></p>
                 <p class="whatsapp">
                   <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_whatsapp.png" alt="">
-                  <span>+54 9 1126412851</span>  
-                  <span>WhatsApp Exclusivo de Fit-Compras</span>
+                  <span>WhatsApp Exclusivo de <br> Fit-Compras</span>
                 </p>
               </div>
               <div class="social-section">
@@ -420,17 +456,19 @@
           </div>
         </footer>
         <hr>
-        <p  class="footer-derechos">2025 | Todos los derechos reservados - FitCompras.</p>
-        <div id="chatbot-container" style="display: none;">
-          <div id="messages">
-            <!-- Los mensajes aparecerán aquí -->
+       
+          <p  class="footer-derechos">2025 | Todos los derechos reservados - FitCompras.<p>
+          <div id="chatbot-container" style="display: none;">
+            <div id="messages">
+              <!-- Los mensajes aparecerán aquí -->
+            </div>
+            <div class="input-container">
+              <input type="text" id="user-input" placeholder="Escribe aquí...">
+              <button onclick="sendMessage()">Enviar</button>
+            </div>
           </div>
-          <div class="input-container">
-            <input type="text" id="user-input" placeholder="Escribe aquí...">
-            <button onclick="sendMessage()">Enviar</button>
-          </div>
-        </div>
-        <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+          <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+
 
 <script src="Dinamica/buscador.js"></script>
 <script src="/Dinamica/chatBot.js"></script>

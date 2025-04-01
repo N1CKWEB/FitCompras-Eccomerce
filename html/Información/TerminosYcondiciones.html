@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es" class="dark" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCompras</title>
+    <link rel="stylesheet" href="/Estilos/style.css">
+    <script src="/Dinamica/app.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div id="productos" class="productos-grid"></div>
+    <div id="paginacion" class="paginacion"></div>
+    <header >
+        <div class="top-nav">
+            <div class="logo-principal"><a class="logo" href="/index.html">FitCompras</a></div>
+            <div class="search-container">
+                <input type="text" placeholder="¿Qué querés comprar hoy?" class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <button class="login-btn" onclick="location.href='./html/login.html'">Ingresar</button>
+        </div>
+         <nav class="main-nav">
+            <ul class="menu-horizontal">
+                <li><a href="#">Ofertas</a></li>
+                <li>
+                    <a href="/html/Almacen/almacen.html">Almacén</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Almacen/conservas.html">Conservas</a></li>
+                        <li><a href="/html/Almacen/cereales.html">Cereales</a></li>
+                        <li><a href="/html/Almacen/aceites.html">Aceites</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Bebidas/bebidas.html">Bebidas</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Bebidas/jugos.html">Jugos</a></li>
+                        <li><a href="/html/Bebidas/aguas.html">Aguas</a></li>
+                        <li><a href="/html/Bebidas/alcohol.html">Alcohol</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Frescos/frescos.html">Frescos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Frescos/frutas.html">Frutas</a></li>
+                        <li><a href="/html/Frescos/verduras.html">Verduras</a></li>
+                        <li><a href="/html/Frescos/carnes.html">Carnes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Congelados/congelados.html">Congelados</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Congelados/helados.html">Helados</a></li>
+                        <li><a href="/html/Congelados/pescados.html">Pescados</a></li>
+                        <li><a href="/html/Congelados/comidasCongeladas.html">Comidas Congeladas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Limpieza/limpieza.html">Limpieza</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Limpieza/insecticidas.html">Insecticidas</a></li>
+                        <li><a href="/html/Limpieza/papeles.html">Papeles</a></li>
+                        <li><a href="/html/Limpieza/desodorantes.html">Desodorantes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <header>
+            <h1>Términos y Condiciones</h1>
+        </header>
+        <section>
+            <h2 class="titulos">1. Uso de la Plataforma</h2>
+            <p>Al acceder y utilizar la plataforma FitCompras, el usuario acepta navegar en el catálogo de productos, agregar productos a favoritos y utilizar el chatbot para obtener asistencia.</p>
+        
+            <h2 class="titulos">2. Registro y cuenta de usuario</h2>
+            <p>El registro en la plataforma es necesario para interactuar con productos, guardar favoritos y acceder al chatbot. El usuario debe proporcionar información veraz y actualizada.</p>
+        
+            <h2 class="titulos">3. Acceso al contenido</h2>
+            <p>FitCompras permite explorar productos y añadirlos a favoritos, pero no se realizan compras ni transacciones dentro de la plataforma.</p>
+        
+            <h2 class="titulos">4. Responsabilidad del usuario</h2>
+            <p>El usuario es responsable de mantener la confidencialidad de sus credenciales de acceso y de no compartirlas con terceros.</p>
+        
+            <h2 class="titulos">5. Chatbot</h2>
+            <p>El chatbot está disponible para asistencia en tiempo real sobre productos y funciones dentro de la plataforma, pero no sustituye el soporte humano en casos complejos.</p>
+        
+            <h2 class="titulos">6. Interacción con productos</h2>
+            <p>Los productos mostrados en el catálogo están sujetos a cambios en disponibilidad y especificaciones sin previo aviso.</p>
+        
+            <h2 class="titulos">7. Protección de datos personales</h2>
+            <p>FitCompras se compromete a proteger los datos personales proporcionados por el usuario, conforme a la política de privacidad. Los datos solo serán utilizados para mejorar la experiencia en la plataforma.</p>
+        
+            <h2 class="titulos">8. Modificaciones en los Términos</h2>
+            <p>FitCompras se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio.</p>
+        
+            <h2 class="titulos">9. Uso adecuado de la plataforma</h2>
+            <p>El usuario se compromete a utilizar la plataforma de manera ética y conforme a las leyes vigentes, evitando realizar actividades ilícitas o que puedan dañar la plataforma.</p>
+        
+            <h2 class="titulos">10. Soporte técnico</h2>
+            <p>En caso de problemas técnicos o preguntas adicionales sobre el uso de la plataforma, el usuario puede contactar con el soporte disponible a través de los canales establecidos.</p>
+        </section>
+        
+        
+        <br>
+        <footer  class="footer">
+            <div class="footer-container">
+              <!-- Categorías -->
+              <div class="footer-column">
+                <h3>Categorías</h3>
+                <ul>
+                  <li><a href="/html/Almacen/almacen.html">Almacen</a></li>
+                  <li><a href="/html/Bebidas/bebidas.html">Bebidas</a></li>
+                  <li><a href="/html/Congelados/congelados.html">Congelados</a></li>
+                  <li><a href="/html/Frescos/frescos.html">Frescos</a></li>
+                  <li><a href="/html/Limpieza/limpieza.html">Limpieza</a></li>
+                </ul>
+              </div>
+          
+              <!-- Sobre Nosotros -->
+              <div class="footer-column">
+                <h3>Sobre Nosotros</h3>
+                <ul>
+                  <li><a href="/html/Información/conocenos.html">Conocenos</a></li>
+                  <li><a href="#">Nuestras Sucursales</a></li>
+                  <li><a href="#">Sumate a Nuestra Comunidad</a></li>
+                  <li><a href="#">Beneficios de Comunidad</a></li>
+                  <li><a href="#">Web de Comunidad</a></li>
+                </ul>
+              </div>
+          
+              <!-- Servicio al Cliente -->
+              <div class="footer-column">
+                <h3>Servicio al Cliente</h3>
+                <div class="service-buttons">
+                  <button class="service-btn">Libro de Quejas Online</button>
+                  <button class="service-btn">Preguntas Frecuentes</button>
+                  <button class="service-btn">Términos y Condiciones</button>
+                </div>
+                <ul>
+                </ul>
+              </div>
+          
+              <!-- Contáctanos -->
+              <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p class="schedule">Horario de atención: Lunes a Viernes de <b>8:00</b> a <b>22:00 hs</b> y Sábados de <b>8hs</b> a <b>18:00hs</b>.</p>
+                <div class="contact-info">
+                  <p class="phone"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-email.png" alt="">261-616-0056</i></p>
+                  <p class="email"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-telefono.png" alt="">fitcompras@gmail.com</i></p>
+                  <p class="whatsapp">
+                    <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_whatsapp.png" alt="">
+                    <span>WhatsApp Exclusivo de <br> Fit-Compras</span>
+                  </p>
+                </div>
+                <div class="social-section">
+                  <p>¡Seguinos!</p>
+                  <p>Enterate de las promos y novedades.</p>
+                  <div class="social-icons">
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_instagram.png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_facebook.png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_twitter.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <hr>
+         
+            <p  class="footer-derechos">2025 | Todos los derechos reservados - FitCompras.</p>
