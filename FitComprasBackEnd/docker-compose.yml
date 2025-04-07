@@ -11,6 +11,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/fitcompras
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: admin
+    volumes:
+      - imagenes-data:/app/imagenes
     depends_on:
       - db
 
@@ -29,3 +31,4 @@ services:
 
 volumes:
   postgres-data:
+  imagenes-data:

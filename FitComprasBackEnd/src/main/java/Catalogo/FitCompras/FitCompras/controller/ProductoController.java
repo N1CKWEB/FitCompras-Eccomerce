@@ -29,12 +29,15 @@ public class ProductoController {
             @RequestParam("nombre") String nombre,
             @RequestParam("precio") double precio,
             @RequestParam(value = "imagen", required = false) MultipartFile imagen,
-            @RequestParam("subCategoria") SubCategoria subCategoria) {
+            @RequestParam(value = "subCategoria", required = false) SubCategoria subCategoria) {
 
         ProductoDTO dto = new ProductoDTO();
         dto.setNombre(nombre);
         dto.setPrecio(precio);
-        dto.setSubCategoria(subCategoria);
+
+        if (subCategoria != null) {
+            dto.setSubCategoria(subCategoria);
+        }
 
         ProductoDTO creado = productoService.crearProducto(dto, imagen);
         return ResponseEntity.ok(creado);
@@ -51,16 +54,20 @@ public class ProductoController {
             @RequestParam("nombre") String nombre,
             @RequestParam("precio") Double precio,
             @RequestParam(value = "imagen", required = false) MultipartFile imagen,
-            @RequestParam("subCategoria") SubCategoria subCategoria) {
+            @RequestParam(value = "subCategoria", required = false) SubCategoria subCategoria) {
 
         ProductoDTO dto = new ProductoDTO();
         dto.setNombre(nombre);
         dto.setPrecio(precio);
-        dto.setSubCategoria(subCategoria);
+
+        if (subCategoria != null) {
+            dto.setSubCategoria(subCategoria);
+        }
 
         ProductoDTO actualizado = productoService.actualizarProducto(id, dto, imagen);
         return ResponseEntity.ok(actualizado);
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
