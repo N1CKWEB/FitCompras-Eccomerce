@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Productos</title>
+</head>
+<body>
+    <h2>Crear Producto</h2>
+    <form id="productoForm">
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" required><br>
+
+        <label>Precio:</label><br>
+        <input type="number" step="0.01" name="precio" required><br>
+
+        <label>Imagen (opcional):</label><br>
+        <input type="file" name="imagen" accept="image/*"><br><br>
+
+        <button type="submit">Crear</button>
+    </form>
+
+    <h2>Lista de Productos</h2>
+    <div id="productosContainer"></div>
+
+    <script>
+        const form = document.getElementById("productoForm");
+        const productosContainer = document.getElementById("productosContainer");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            const response = await fetch("http://localhost:8080/api/productos", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                alert("Producto creado exitosamente");
+                form.reset();
+                cargarProductos();
+            } else {
+                alert("Error al crear producto");
+            }
+        });
+
+        async function cargarProductos() {
+            const response = await fetch("http://localhost:8080/api/productos");
+            const productos = await response.json();
+
+            productosContainer.innerHTML = productos.map(p => `
+                <div style="border:1px solid #ccc; padding:10px; margin:5px;">
+                    <strong>${p.nombre}</strong><br>
+                    Precio: $${p.precio}<br>
+                    Subcategoría: ${p.subCategoria?.nombre || 'N/A'}<br>
+                </div>
+            `).join('');
+        }
+
+        cargarProductos();
+    </script>
+</body>
+</html>
