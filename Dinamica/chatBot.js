@@ -63,6 +63,9 @@ function getBotResponse(userMessage) {
     for (let i = 0; i < respuestas.length; i++) {
         if (userMessage.toLowerCase() === respuestas[i].pregunta.toLowerCase()) {
             return respuestas[i].respuesta;
+                    
+            // Desplazar automáticamente hacia abajo
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         }
     }
     return "Lo siento, no entiendo esa pregunta. ¿Puedes reformularla?";

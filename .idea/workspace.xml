@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b13cf335-6897-4924-a5f3-7b4ef1675080" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/CreateProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/CreateProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/UpdateProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Dto/UpdateProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitComprasBackEnd/src/main/java/Catalogo/FitCompras/FitCompras/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>

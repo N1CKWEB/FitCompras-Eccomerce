@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" class="dark" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCompras</title>
+    <link rel="stylesheet" href="/Estilos/style.css">
+    <script src="/Dinamica/app.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div id="productos" class="productos-grid"></div>
+    <div id="paginacion" class="paginacion"></div>
+    <header >
+        <div class="top-nav">
+            <div class="logo-principal"><a class="logo" href="/index.html">FitCompras</a></div>
+            <div class="search-container">
+                <input type="text" placeholder="¿Qué querés comprar hoy?" class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <button class="login-btn" onclick="location.href='./html/login.html'">Ingresar</button>
+        </div>
+         <nav class="main-nav">
+            <ul class="menu-horizontal">
+                <li><a href="#">Ofertas</a></li>
+                <li>
+                    <a href="/html/Almacen/almacen.html">Almacén</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Almacen/conservas.html">Conservas</a></li>
+                        <li><a href="/html/Almacen/cereales.html">Cereales</a></li>
+                        <li><a href="/html/Almacen/aceites.html">Aceites</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Bebidas/bebidas.html">Bebidas</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Bebidas/jugos.html">Jugos</a></li>
+                        <li><a href="/html/Bebidas/aguas.html">Aguas</a></li>
+                        <li><a href="/html/Bebidas/alcohol.html">Alcohol</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Frescos/frescos.html">Frescos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Frescos/frutas.html">Frutas</a></li>
+                        <li><a href="/html/Frescos/verduras.html">Verduras</a></li>
+                        <li><a href="/html/Frescos/carnes.html">Carnes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Congelados/congelados.html">Congelados</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Congelados/helados.html">Helados</a></li>
+                        <li><a href="/html/Congelados/pescados.html">Pescados</a></li>
+                        <li><a href="/html/Congelados/comidasCongeladas.html">Comidas Congeladas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/html/Limpieza/limpieza.html">Limpieza</a>
+                    <ul class="menu-vertical">
+                        <li><a href="/html/Limpieza/insecticidas.html">Insecticidas</a></li>
+                        <li><a href="/html/Limpieza/papeles.html">Papeles</a></li>
+                        <li><a href="/html/Limpieza/desodorantes.html">Desodorantes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+
+        <h2 id="titulo-conocenos">Nosotros</h2>
+        <p id="info-conocenos">En <b>FitCompras</b>, ofrecemos una <b>plataforma</b> de comercio electrónico diseñada para brindar una experiencia de compra eficiente, intuitiva y segura. Nuestro sistema cuenta con un catálogo interactivo que permite a los clientes explorar una amplia variedad de productos organizados por categorías, facilitando la búsqueda y selección de artículos con información detallada. Además, integramos un chatbot inteligente que proporciona asistencia en tiempo real, respondiendo consultas, recomendando productos y optimizando la interacción con la tienda. Los usuarios también pueden gestionar su experiencia mediante una funcionalidad de favoritos, donde pueden almacenar productos de interés para futuras compras, agilizando así el proceso de adquisición. Nuestra plataforma está diseñada con una interfaz moderna y responsive que garantiza una navegación fluida en cualquier dispositivo, permitiendo a los clientes realizar sus compras de manera rápida y cómoda. En FitCompras, combinamos tecnología e innovación para ofrecer un servicio de alto nivel, asegurando confiabilidad, accesibilidad y una experiencia de usuario optimizada.</p>
+        
+        <br>
+        <footer style="margin-top: 310px;" class="footer">
+            <div class="footer-container">
+              <!-- Categorías -->
+              <div class="footer-column">
+                <h3>Categorías</h3>
+                <ul>
+                  <li><a href="/html/Almacen/almacen.html">Almacen</a></li>
+                  <li><a href="/html/Bebidas/bebidas.html">Bebidas</a></li>
+                  <li><a href="/html/Congelados/congelados.html">Congelados</a></li>
+                  <li><a href="/html/Frescos/frescos.html">Frescos</a></li>
+                  <li><a href="/html/Limpieza/limpieza.html">Limpieza</a></li>
+                </ul>
+              </div>
+          
+              <!-- Sobre Nosotros -->
+              <div class="footer-column">
+                <h3>Sobre Nosotros</h3>
+                <ul>
+                  <li><a href="/html/Información/conocenos.html">Conocenos</a></li>
+                  <li><a href="#">Nuestras Sucursales</a></li>
+                  <li><a href="#">Sumate a Nuestra Comunidad</a></li>
+                  <li><a href="#">Beneficios de Comunidad</a></li>
+                  <li><a href="#">Web de Comunidad</a></li>
+                </ul>
+              </div>
+          
+              <!-- Servicio al Cliente -->
+              <div class="footer-column">
+                <h3>Servicio al Cliente</h3>
+                <div class="service-buttons">
+                  <button class="service-btn">Libro de Quejas Online</button>
+                  <button class="service-btn">Preguntas Frecuentes</button>
+                  <button class="service-btn">Términos y Condiciones</button>
+                </div>
+                <ul>
+                </ul>
+              </div>
+          
+              <!-- Contáctanos -->
+              <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p class="schedule">Horario de atención: Lunes a Viernes de <b>8:00</b> a <b>22:00 hs</b> y Sábados de <b>8hs</b> a <b>18:00hs</b>.</p>
+                <div class="contact-info">
+                  <p class="phone"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-email.png" alt="">261-616-0056</i></p>
+                  <p class="email"><img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono-telefono.png" alt="">fitcompras@gmail.com</i></p>
+                  <p class="whatsapp">
+                    <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_whatsapp.png" alt="">
+                    <span>WhatsApp Exclusivo de <br> Fit-Compras</span>
+                  </p>
+                </div>
+                <div class="social-section">
+                  <p>¡Seguinos!</p>
+                  <p>Enterate de las promos y novedades.</p>
+                  <div class="social-icons">
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_instagram.png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_facebook.png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="https://static.cotodigital3.com.ar/sitios/cdigi/static/content/images/nuevositio/footer/icono_twitter.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <hr>
+         
+            <p  class="footer-derechos">2025 | Todos los derechos reservados - FitCompras.</p>
