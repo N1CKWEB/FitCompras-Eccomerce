@@ -22,6 +22,10 @@ public class SubCategoriaController {
         return ResponseEntity.ok(subCategoriaService.obtenerTodas());
     }
 
+    @PostMapping("/crearSubcategoria")
+    public ResponseEntity<SubCategoriaDTO> crearSubcategoria(@RequestBody SubCategoriaDTO subcategoriaDTO){
+        return ResponseEntity.ok(subCategoriaService.crearSubCategoria(subcategoriaDTO));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<SubCategoriaDTO> obtenerPorId(@PathVariable Long id) {
         return ResponseEntity.ok(subCategoriaService.obtenerPorId(id));
