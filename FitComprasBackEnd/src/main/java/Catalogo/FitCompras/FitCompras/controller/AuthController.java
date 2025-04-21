@@ -1,5 +1,6 @@
 package Catalogo.FitCompras.FitCompras.controller;
-
+import java.util.List;
+import Catalogo.FitCompras.FitCompras.entities.User;
 import Catalogo.FitCompras.FitCompras.service.UserService;
 import Catalogo.FitCompras.FitCompras.util.JwtUtil;
 import Catalogo.FitCompras.FitCompras.util.LoginRequest;
@@ -24,5 +25,17 @@ public class AuthController {
     @GetMapping("/login")
     public String login(@RequestBody LoginRequest request) {
         return jwtUtil.generateToken(request.getUsername());
+    }
+    
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    
+    @DeleteMapping("/users/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return "Usuario eliminado con éxito";
     }
 }

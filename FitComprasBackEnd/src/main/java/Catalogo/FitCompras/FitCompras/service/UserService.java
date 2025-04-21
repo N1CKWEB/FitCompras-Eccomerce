@@ -10,7 +10,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -44,5 +44,16 @@ public class UserService {
                 user.getRoles()
         );
         }
+ 
+       public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 
+    
+    public void deleteUser(Long id) {
+        if (!userRepository.existsById(id)) {
+            throw new UsernameNotFoundException("Usuario no encontrado");
+        }
+        userRepository.deleteById(id);
+    }
 }
