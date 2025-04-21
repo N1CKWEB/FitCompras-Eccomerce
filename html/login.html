@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andev web - Validar formulario</title>
+    <title></title>
     <link rel="stylesheet" href="/Estilos/login.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -110,74 +110,74 @@
 
 
 <!-- Agrega este bloque <script> al final como lo tenías -->
-    <script>
-        const form_registrarse = document.getElementById('registrarseForm');
-    
-        form_registrarse.addEventListener('submit', async function (event) {
-            event.preventDefault(); // Evita que se recargue la página
-    
-            const user = {
-                username: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value,
-            };
-    
-            try {
-                const response = await fetch('http://localhost:8080/api/auth/register', {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(user)
-                });
-    
-                if (response.ok) {
-                    alert("✅ Usuario creado exitosamente");
-                    form_registrarse.reset();
-                } else {
-                    const data = await response.json();
-                    alert("❌ Error al crear el usuario: " + (data.message || "Error desconocido"));
-                }
-            } catch (error) {
-                console.error("Error al enviar datos:", error);
-                alert("❌ Error al conectar con el servidor");
+<script>
+    const form_registrarse = document.getElementById('registrarseForm');
+
+    form_registrarse.addEventListener('submit', async function (event) {
+        event.preventDefault(); // Evita que se recargue la página
+
+        const user = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+        };
+
+        try {
+            const response = await fetch('http://localhost:8080/api/auth/register', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(user)
+            });
+
+            if (response.ok) {
+                alert("✅ Usuario creado exitosamente");
+                form_registrarse.reset();
+            } else {
+                const data = await response.json();
+                alert("❌ Error al crear el usuario: " + (data.message || "Error desconocido"));
             }
-        });
-    </script>
-    
-    <script>
-        const form_iniciar_sesion = document.getElementById('iniciarSesionForm');
+        } catch (error) {
+            console.error("Error al enviar datos:", error);
+            alert("❌ Error al conectar con el servidor");
+        }
+    });
+</script>
+
+<script>
+    const form_iniciar_sesion = document.getElementById('iniciarSesionForm');
 
     form_iniciar_sesion.addEventListener('submit', async function (event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const userLogin = {
-        email: document.getElementById('email_login').value,
-        password: document.getElementById('password_login').value,
-    };
+        const userLogin = {
+            email: document.getElementById('email_login').value,
+            password: document.getElementById('password_login').value,
+        };
 
-    try {
-        const response = await fetch('http://localhost:8080/api/auth/login', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userLogin)
-        });
+        try {
+            const response = await fetch('http://localhost:8080/api/auth/login', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userLogin)
+            });
 
-       if (response.ok){
-        alert('✅ Inicio de sesión exitoso');
-        window.location.href='C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
-       }else{
-         const data = await response.json();
-         alert('❌ Error al iniciar sesión: '+ (data.message || "Error desconocido"))
-          }  
-       }catch(error){
-        console.error("Error:", error);
-        alert("❌ Error al conectar con el servidor");
-       }
-        });
+            if (response.ok) {
+                alert('✅ Inicio de sesión exitoso');
+                window.location.href = 'C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
+            } else {
+                const data = await response.json();
+                alert('❌ Error al iniciar sesión: ' + (data.message || "Error desconocido"))
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("❌ Error al conectar con el servidor");
+        }
+    });
 
-    </script>
+</script>
 
 </html>
