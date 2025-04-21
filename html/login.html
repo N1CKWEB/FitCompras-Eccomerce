@@ -15,7 +15,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container register-container">
-            <form>
+            <form id="registrarseForm" enctype="multipart/form-data">
                 <h1>Regístrate aquí</h1>
                 <div class="form-control">
                     <input type="text" id="username" placeholder="Nombre" />
@@ -43,15 +43,15 @@
         </div>
 
         <div class="form-container login-container">
-            <form class="form-lg">
+            <form id="iniciarSesionForm" enctype="multipart/form-data" class="form-lg">
                 <h1>Inicia sesión aquí</h1>
                 <div class="form-control2">
-                    <input type="email" class="email-2" placeholder="Correo electrónico" />
+                    <input type="email" id="email_login" class="email-2" placeholder="Correo electrónico" />
                     <small class="email-error-2"></small>
                     <span></span>
                 </div>
                 <div class="form-control2">
-                    <input type="password" class="password-2" placeholder="Contraseña" />
+                    <input type="password" id="password_login" class="password-2" placeholder="Contraseña" />
                     <small class="password-error-2"></small>
                     <span></span>
                 </div>
@@ -107,5 +107,77 @@
     </div>
 </body>
 <script src="/Dinamica/login.js"></script>
+
+
+<!-- Agrega este bloque <script> al final como lo tenías -->
+    <script>
+        const form_registrarse = document.getElementById('registrarseForm');
+    
+        form_registrarse.addEventListener('submit', async function (event) {
+            event.preventDefault(); // Evita que se recargue la página
+    
+            const user = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+            };
+    
+            try {
+                const response = await fetch('http://localhost:8080/api/auth/register', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                });
+    
+                if (response.ok) {
+                    alert("✅ Usuario creado exitosamente");
+                    form_registrarse.reset();
+                } else {
+                    const data = await response.json();
+                    alert("❌ Error al crear el usuario: " + (data.message || "Error desconocido"));
+                }
+            } catch (error) {
+                console.error("Error al enviar datos:", error);
+                alert("❌ Error al conectar con el servidor");
+            }
+        });
+    </script>
+    
+    <script>
+        const form_iniciar_sesion = document.getElementById('iniciarSesionForm');
+
+    form_iniciar_sesion.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const userLogin = {
+        email: document.getElementById('email_login').value,
+        password: document.getElementById('password_login').value,
+    };
+
+    try {
+        const response = await fetch('http://localhost:8080/api/auth/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userLogin)
+        });
+
+       if (response.ok){
+        alert('✅ Inicio de sesión exitoso');
+        window.location.href='C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
+       }else{
+         const data = await response.json();
+         alert('❌ Error al iniciar sesión: '+ (data.message || "Error desconocido"))
+          }  
+       }catch(error){
+        console.error("Error:", error);
+        alert("❌ Error al conectar con el servidor");
+       }
+        });
+
+    </script>
 
 </html>

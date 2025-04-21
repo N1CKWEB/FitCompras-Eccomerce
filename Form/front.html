@@ -6,18 +6,51 @@
 </head>
 <body>
     <h2>Crear Producto</h2>
-    <form id="productoForm">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre" required><br>
 
-        <label>Precio:</label><br>
-        <input type="number" step="0.01" name="precio" required><br>
+    <form id="productoForm" enctype="multipart/form-data">
+        <div>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre" required /><br>
+        </div>
 
-        <label>Imagen (opcional):</label><br>
-        <input type="file" name="imagen" accept="image/*"><br><br>
+        <div>
+            <label for="precio">Precio:</label><br>
+            <input type="number" step="0.01" name="precio" id="precio" required /><br>
+        </div>
 
-        <button type="submit">Crear</button>
+        <div>
+            <label for="imagen">Imagen (opcional):</label><br>
+            <input type="file" name="imagen" id="imagen" accept="image/*"><br>
+        </div>
+
+        <div>
+            <label for="subCategoria">Subcategoría:</label><br>
+            <select name="subCategoriaId" id="subCategoria" required>
+                <option value="" disabled selected>Seleccionar Subcategoría</option>
+
+                <!-- Opciones fijas -->
+                <option value="1">Conservas</option>
+                <option value="2">Cereales</option>
+                <option value="3">Aceites</option>
+                <option value="4">Jugos</option>
+                <option value="5">Aguas</option>
+                <option value="6">Alcohol</option>
+                <option value="7">Frutas</option>
+                <option value="8">Verduras</option>
+                <option value="9">Carnes</option>
+                <option value="10">Helados</option>
+                <option value="11">Pescados</option>
+                <option value="12">Comidas Congeladas</option>
+                <option value="13">Insecticidas</option>
+                <option value="14">Papeles</option>
+                <option value="15">Desodorantes</option>
+            </select>
+        </div><br>
+
+        <button type="submit">Guardar Producto</button>
     </form>
+
+    <hr>
 
     <h2>Lista de Productos</h2>
     <div id="productosContainer"></div>
@@ -25,6 +58,7 @@
     <script>
         const form = document.getElementById("productoForm");
         const productosContainer = document.getElementById("productosContainer");
+        const subCategoriaSelect = document.getElementById("subCategoria");
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -36,11 +70,11 @@
             });
 
             if (response.ok) {
-                alert("Producto creado exitosamente");
+                alert("✅ Producto creado exitosamente");
                 form.reset();
                 cargarProductos();
             } else {
-                alert("Error al crear producto");
+                alert("❌ Error al crear producto");
             }
         });
 
@@ -57,6 +91,23 @@
             `).join('');
         }
 
+        async function cargarSubcategorias() {
+            try {
+                const response = await fetch("http://localhost:8080/api/subcategorias");
+                const subcategorias = await response.json();
+
+                subcategorias.forEach(sub => {
+                    const option = document.createElement("option");
+                    option.value = sub.id;
+                    option.textContent = sub.nombre;
+                    subCategoriaSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.warn("⚠️ No se pudieron cargar las subcategorías dinámicamente");
+            }
+        }
+
+        cargarSubcategorias();
         cargarProductos();
     </script>
 </body>

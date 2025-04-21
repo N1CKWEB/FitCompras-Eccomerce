@@ -1370,3 +1370,251 @@ p {
   font-size: 1.6em;
   font-weight: bold; /* Make titles stronger */ 
 }
+
+/* Nuevo CSS */
+
+
+/* Estilos del header y navegación */
+header {
+  width: 100%;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.logo-principal .logo {
+  color: #e41e26;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+.login-btn {
+  background-color: #e41e26;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos de la barra de navegación principal */
+.main-nav {
+  background-color: #222;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.menu-horizontal {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-horizontal > li {
+  position: relative;
+}
+
+.menu-horizontal > li > a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  transition: background-color 0.3s;
+}
+
+.menu-horizontal > li:hover > a {
+  background-color: #444;
+}
+
+.menu-vertical {
+  position: absolute;
+  display: none;
+  list-style: none;
+  background-color: #333;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block;
+}
+
+.menu-vertical li a {
+  display: block;
+  color: white;
+  padding: 12px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.menu-vertical li a:hover {
+  background-color: #555;
+}
+
+/* Media queries para hacer el menú responsive */
+@media screen and (max-width: 768px) {
+  .top-nav {
+      flex-wrap: wrap;
+  }
+  
+  .logo-principal {
+      margin-bottom: 10px;
+  }
+  
+  .search-container {
+      order: 3;
+      margin: 10px 0 0 0;
+      max-width: 100%;
+  }
+  
+  .menu-toggle {
+      display: block;
+  }
+  
+  .menu-horizontal {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+  }
+  
+  .menu-horizontal.active {
+      display: flex;
+  }
+  
+  .menu-horizontal > li {
+      width: 100%;
+  }
+  
+  .menu-vertical {
+      position: static;
+      width: 100%;
+      display: none;
+      padding-left: 20px;
+  }
+  
+  .menu-item-has-children {
+      position: relative;
+  }
+  
+  .menu-item-has-children > a::after {
+      content: '\f107';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-left: 10px;
+  }
+  
+  .menu-item-has-children.active > a::after {
+      content: '\f106';
+  }
+  
+  .menu-item-has-children.active .menu-vertical {
+      display: block;
+  }
+}
+
+/* Nuevo CSS */
+
+/* Estilos base para la sección de ofertas */
+.ofertas-principal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ofertas-bebidas,
+.ofertas-congelados,
+.ofertas-frescos,
+.ofertas-limpiezas {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+.ofertas-bebidas:hover,
+.ofertas-congelados:hover,
+.ofertas-frescos:hover,
+.ofertas-limpiezas:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ofertas-principal img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media screen and (max-width: 992px) {
+  .ofertas-principal {
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ofertas-principal {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .ofertas-bebidas,
+  .ofertas-congelados,
+  .ofertas-frescos,
+  .ofertas-limpiezas {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ofertas-principal {
+    padding: 10px;
+    gap: 10px;
+  }
+}

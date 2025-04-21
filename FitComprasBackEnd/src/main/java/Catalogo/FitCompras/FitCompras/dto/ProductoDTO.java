@@ -15,3 +15,4 @@ public class ProductoDTO {
     private String imagenBase64;
     private SubCategoria subCategoria;
 }
+

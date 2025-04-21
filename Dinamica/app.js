@@ -138,3 +138,4 @@ function mostrarDescuentos(dia) {
   document.addEventListener('DOMContentLoaded', function() {
     mostrarDescuentos('jueves');
   });
+
