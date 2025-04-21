@@ -21,7 +21,7 @@ public class AuthController {
         return "Usuario registrado con éxito";
     }
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public String login(@RequestBody LoginRequest request) {
         return jwtUtil.generateToken(request.getUsername());
     }
