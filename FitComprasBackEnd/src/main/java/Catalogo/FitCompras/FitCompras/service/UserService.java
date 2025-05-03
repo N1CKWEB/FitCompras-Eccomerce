@@ -17,13 +17,17 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     public void register(RegisterRequest request) {
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("El correo ya está registrado");
+        }
+
         User user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .roles(Set.of("USER"))
                 .build();
-        
+
         userRepository.save(user);
     }
 }
