@@ -134,6 +134,8 @@
             if (response.ok) {
                 alert("✅ Usuario creado exitosamente");
                 form_registrarse.reset();
+                window.location.href = 'C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
+                
             } else {
                 const data = await response.json();
                 alert("❌ Error al crear el usuario: " + (data.message || "Error desconocido"));
@@ -169,8 +171,8 @@
                 alert('✅ Inicio de sesión exitoso');
                 window.location.href = 'C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
             } else {
-                const data = await response.json();
-                alert('❌ Error al iniciar sesión: ' + (data.message || "Error desconocido"))
+                const errorText = await response.text();
+                alert("❌ Error al iniciar sesión: " + errorText);
             }
         } catch (error) {
             console.error("Error:", error);
