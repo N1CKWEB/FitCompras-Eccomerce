@@ -478,7 +478,9 @@
   document.addEventListener("DOMContentLoaded", function () {
     const roles = JSON.parse(sessionStorage.getItem('roles'));
     const username = sessionStorage.getItem('username');
-    const email = sessionStorage.getItem('email'); // si lo guardaste
+
+    console.log("Roles:", roles);
+    console.log("Username:", username); 
 
     // Si no hay roles o username, redirige al login
     if (!roles || !username) {
@@ -488,23 +490,41 @@
 
     // Mostrar el panel de administración si es ADMIN
     if (roles.includes("ADMIN")) {
-      mostrarPanelAdmin();
+      mostrarPanelAdmin(username);
     }
 
-    // Mostrar perfil del usuario
-    mostrarPerfilUsuario(email || username);
+    if (roles.includes("USER")) {
+      mostrarPerfilUsuario(username);
+    }
 
-    function mostrarPanelAdmin() {
+    function mostrarPanelAdmin(nombre) {
       const adminPanel = document.createElement('div');
       adminPanel.innerHTML = `
-        <section id="admin-panel" style="padding: 20px; background-color: #f5f5f5; margin-top: 20px;">
-          <h2>Panel de Administración</h2>
-          <button onclick="location.href='/html/Administrador/agregarProducto.html'" class="btn btn-primary mt-2">Agregar Producto</button>
-          <button onclick="location.href='/html/Administrador/gestionarUsuarios.html'" class="btn btn-secondary mt-2">Gestionar Usuarios</button>
-        </section>
+        <div id="adminPanel" style="position: fixed; top: 20px; right: 20px;">
+          <img src="/img/avatar-usuario.png" alt="Avatar" id="admin-avatar" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+          <div id="admin-info-usuario" style="display:none; background: white; border: 1px solid #ccc; padding: 10px; position: absolute; right: 0; margin-top: 10px;">
+            <p><strong>Usuario:</strong> ${nombre}</p>
+            <button onclick="location.href='/html/Administrador/agregarProducto.html'" class="btn btn-primary mt-2">Agregar Producto</button>
+            <button id="admin-logout-btn" class="btn btn-danger btn-sm">Cerrar sesión</button>
+          </div>
+        </div>
       `;
-      document.body.insertBefore(adminPanel, document.querySelector('footer'));
+      document.body.appendChild(adminPanel);
+    
+      const avatar = document.getElementById('admin-avatar');
+      const infoUsuario = document.getElementById('admin-info-usuario');
+      const logoutBtn = document.getElementById('admin-logout-btn');
+    
+      avatar.addEventListener('click', () => {
+        infoUsuario.style.display = infoUsuario.style.display === 'none' ? 'block' : 'none';
+      });
+    
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.clear();
+        window.location.href = "/html/login.html";
+      });
     }
+    
 
     function mostrarPerfilUsuario(nombre) {
       const userProfile = document.createElement('div');

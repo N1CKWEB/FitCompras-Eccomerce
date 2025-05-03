@@ -175,11 +175,12 @@
                 sessionStorage.setItem('username', data.username);
                 sessionStorage.setItem('roles', JSON.stringify(data.roles));
 
+
                 alert('✅ Inicio de sesión exitoso');
 
                 // Redirección usando ruta relativa
                 if (data.roles && data.roles.includes('ADMIN')) {
-                    window.location.href = './paneladmin.html';
+                    window.location.href = '../index.html';
                 } else {
                     window.location.href = '../index.html';
                 }
