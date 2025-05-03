@@ -31,7 +31,7 @@ public class UserService {
         userRepository.save(user);
     }
     public LoginResponse login(LoginRequest request) {
-        User user = userRepository.findByUsername(request.getUsername())
+        User user = userRepository.findByEmail(request.getMail())
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {

@@ -1,11 +1,15 @@
 package Catalogo.FitCompras.FitCompras.controller;
 import java.util.List;
+
+import Catalogo.FitCompras.FitCompras.dto.LoginResponse;
 import Catalogo.FitCompras.FitCompras.entities.User;
 import Catalogo.FitCompras.FitCompras.service.UserService;
 import Catalogo.FitCompras.FitCompras.util.JwtUtil;
 import Catalogo.FitCompras.FitCompras.util.LoginRequest;
 import Catalogo.FitCompras.FitCompras.util.RegisterRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,28 +18,28 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final UserService userService;
-    private final JwtUtil jwtUtil;
 
     @PostMapping("/register")
-    public String register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<Void> register(@RequestBody RegisterRequest request) {
         userService.register(request);
-        return "Usuario registrado con éxito";
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("/login")
-    public String login(@RequestBody LoginRequest request) {
-        return jwtUtil.generateToken(request.getUsername());
-    }
-    
-    @GetMapping("/users")
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
+        LoginResponse response = userService.login(request);
+        return ResponseEntity.ok(response);
     }
 
-    
-    @DeleteMapping("/users/{id}")
-    public String deleteUser(@PathVariable Long id) {
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
-        return "Usuario eliminado con éxito";
+        return ResponseEntity.noContent().build();
     }
 }

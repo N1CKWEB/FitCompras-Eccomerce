@@ -31,7 +31,6 @@ public class User implements UserDetails {
     @Column(name = "role")
     private Set<String> roles;
 
-    // 🔹 Implementación de métodos de UserDetails
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream()
