@@ -474,29 +474,25 @@
 <script src="Dinamica/buscador.js"></script>
 <script src="/Dinamica/chatBot.js"></script>
 
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const token = localStorage.getItem('token');
+  document.addEventListener("DOMContentLoaded", function () {
+    const roles = JSON.parse(sessionStorage.getItem('roles'));
+    const username = sessionStorage.getItem('username');
+    const email = sessionStorage.getItem('email'); // si lo guardaste
 
-    if (!token) {
-      // Si no hay token, redirigir al login
+    // Si no hay roles o username, redirige al login
+    if (!roles || !username) {
       window.location.href = "/html/login.html";
-    } else {
-      // Decodificar el token para extraer info
-      const payload = JSON.parse(atob(token.split('.')[1]));
-
-      const userRole = payload.role; // "ADMIN" o "USER"
-      const userEmail = payload.sub; // Email del usuario
-
-      // Si es administrador, mostrar panel de administración
-      if (userRole === "ADMIN") {
-        mostrarPanelAdmin();
-      }
-
-      // Mostrar nombre de usuario
-      mostrarPerfilUsuario(userEmail);
+      return;
     }
+
+    // Mostrar el panel de administración si es ADMIN
+    if (roles.includes("ADMIN")) {
+      mostrarPanelAdmin();
+    }
+
+    // Mostrar perfil del usuario
+    mostrarPerfilUsuario(email || username);
 
     function mostrarPanelAdmin() {
       const adminPanel = document.createElement('div');
@@ -510,13 +506,13 @@
       document.body.insertBefore(adminPanel, document.querySelector('footer'));
     }
 
-    function mostrarPerfilUsuario(email) {
+    function mostrarPerfilUsuario(nombre) {
       const userProfile = document.createElement('div');
       userProfile.innerHTML = `
         <div id="perfil-usuario" style="position: fixed; top: 20px; right: 20px;">
           <img src="/img/avatar-usuario.png" alt="Avatar" id="avatar" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
           <div id="info-usuario" style="display:none; background: white; border: 1px solid #ccc; padding: 10px; position: absolute; right: 0; margin-top: 10px;">
-            <p><strong>Usuario:</strong> ${email}</p>
+            <p><strong>Usuario:</strong> ${nombre}</p>
             <button id="logout-btn" class="btn btn-danger btn-sm">Cerrar sesión</button>
           </div>
         </div>
@@ -532,12 +528,13 @@
       });
 
       logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('token');
+        sessionStorage.clear();
         window.location.href = "/html/login.html";
       });
     }
   });
 </script>
+
 
 
 

@@ -168,8 +168,22 @@
             });
 
             if (response.ok) {
+                const data = await response.json();
+
+                // Guardar datos en sessionStorage
+                sessionStorage.setItem('userId', data.id);
+                sessionStorage.setItem('username', data.username);
+                sessionStorage.setItem('roles', JSON.stringify(data.roles));
+
                 alert('✅ Inicio de sesión exitoso');
-                window.location.href = 'C:/Users/LENOVO/OneDrive/Documentos/FitCompras-Eccomerce/index.html'
+
+                // Redirección usando ruta relativa
+                if (data.roles && data.roles.includes('ADMIN')) {
+                    window.location.href = './paneladmin.html';
+                } else {
+                    window.location.href = '../index.html';
+                }
+
             } else {
                 const errorText = await response.text();
                 alert("❌ Error al iniciar sesión: " + errorText);
@@ -179,7 +193,7 @@
             alert("❌ Error al conectar con el servidor");
         }
     });
-
 </script>
+
 
 </html>
