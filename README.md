@@ -1,78 +1,97 @@
+# 🛍️ FitCompras - Catálogo de Productos Inteligente
 
-# 🛍️ FitCompras-Eccomerce
+**Plataforma desarrollada como proyecto final para la materia Prácticas Profesionalizantes II - Tecnicatura en Desarrollo de Software**
 
-**Comercio Electrónico desarrollado para la materia de Prácticas Profesionalizante II**
+---
 
-## 📋 Descripción
+## 📋 Descripción General
 
-FitCompras es una plataforma de comercio electrónico diseñada para ofrecer una experiencia de compra en línea fluida y segura. Este proyecto fue desarrollado como parte de la asignatura Prácticas Profesionalizante II, con el objetivo de aplicar y consolidar conocimientos en desarrollo web y comercio electrónico.
+**FitCompras** es una aplicación web que funciona como un **catálogo virtual de productos**, permitiendo a los usuarios explorar, guardar favoritos y visualizar promociones de manera organizada, intuitiva y accesible desde cualquier dispositivo.  
+Está orientada a mejorar la planificación de compras mediante herramientas como filtros inteligentes, gestión personalizada y asistencia virtual por medio de un chatbot.
 
-## 🚀 Características
+El proyecto se desarrolló con enfoque modular bajo arquitectura **MVC**, integrando tecnologías actuales del stack Java + Web, con base de datos relacional y soporte multiplataforma.
 
-- **Catálogo de Productos**: Navega por una amplia variedad de productos organizados en categorías.
-- **Carrito de Compras**: Añade productos al carrito y gestiona tus selecciones antes de la compra.
-- **Proceso de Pago Seguro**: Realiza transacciones de manera segura y confiable.
-- **Panel de Administración**: Administra productos, categorías y pedidos desde una interfaz intuitiva.
-- **Búsqueda Avanzada**: Encuentra productos rápidamente utilizando filtros y búsqueda por palabras clave.
+---
 
-## 🛠️ Tecnologías Utilizadas
+## 🚀 Funcionalidades Principales
 
-- **Frontend**:
-  - HTML5
-  - CSS3
-  - JavaScript ES6+
-- **Backend**:
-  - Java con Spring Boot
-  - Base de datos MySQL
-- **Herramientas y Librerías**:
-  - Bootstrap para diseño responsivo
-  - jQuery para interactividad
-  - Hibernate para ORM
-  - Thymeleaf como motor de plantillas
+- 🔎 **Exploración de Catálogo**: Navegación fluida por productos organizados por categorías, con descripción, imagen y precios actualizados.
+- ❤️ **Productos Guardados**: Posibilidad de marcar productos como favoritos para acceder rápidamente a ellos más tarde.
+- 🎯 **Promociones Dinámicas**: Visualización de ofertas especiales actualizadas periódicamente por día o banco.
+- 🤖 **Chatbot de Asistencia**: Sistema automatizado de soporte, accesible desde cualquier sección, que responde consultas frecuentes.
+- 👤 **Registro e Inicio de Sesión**: Autenticación segura y validación de credenciales para una experiencia personalizada.
+- 🛠️ **Panel de Administración**: Módulo exclusivo para administradores con funcionalidades de alta, modificación y baja de productos.
+- 📱 **Diseño Responsive**: Compatible con computadoras, tablets, garantizando una navegación uniforme.
+- 🔐 **Autenticación y Seguridad**: Control de acceso por rol, cifrado de contraseñas y validación segura desde backend.
 
-## 📦 Instalación
+---
+## 👥 Equipo de Desarrollo
+- 👨‍💼 **Jefe de Proyecto: Nicolás Díaz** 
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/N1CKWEB/FitCompras-Eccomerce.git
-   ```
-2. **Configurar la base de datos**:
-   - Crear una base de datos en MySQL llamada `fitcompras`.
-   - Importar el esquema y datos iniciales desde el archivo `database/fitcompras.sql`.
-3. **Configurar el archivo de propiedades**:
-   - En el archivo `src/main/resources/application.properties`, actualizar las credenciales de la base de datos según tu configuración local.
-4. **Compilar y ejecutar la aplicación**:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
+- 👨‍💻 **Backend Developer: Franco Villar Laz y Lautaro Martín**
 
-## 📸 Capturas de Pantalla
+- 🎨 **Frontend Developer: Matías Morán y Franco Villar Laz**
 
-![Página Principal](img/homepage.png)
-*Pantalla de inicio mostrando las categorías destacadas.*
+- 🖌️ **Diseño UI: Todo el equipo**
 
-![Carrito de Compras](img/cart.png)
-*Vista del carrito de compras con productos seleccionados.*
+- 🧪 **Testing & QA: Nicolás Araya**
+---
 
-## 🤝 Contribuciones
+## 🧑‍💻 Tecnologías Utilizadas
 
-¡Las contribuciones son bienvenidas! Si deseas colaborar:
+### 🖥️ Frontend
 
-1. Realiza un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Agregar nueva funcionalidad'`).
-4. Sube tus cambios (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request detallando tus modificaciones.
+- `HTML5`, `CSS3`, `JavaScript`
+- `Bootstrap 5` para diseño responsive
+- `jQuery` para interactividad dinámica
+
+### 🛠️ Backend
+
+- `Java` con `Spring Boot`
+- `Spring Data JPA` para persistencia de datos
+- `RESTful API` para interacción cliente-servidor
+
+### 💾 Base de Datos
+
+- `PostgreSQL` (modelada en 3FN)
+- Gestión estructurada de productos, usuarios, subcategorías y descuentos
+
+### 🧪 Desarrollo y Despliegue
+
+- `Docker` para contenedores y despliegue local
+- Arquitectura en capas (`MVC`)
+
+---
+
+## 🧱 Arquitectura del Proyecto
+
+- `Vista (View)`: Interfaz de usuario construida con HTML, CSS y JS. Acceso al catálogo, chatbot y promociones.
+- `Controlador (Controller)`: Maneja las solicitudes y respuestas entre cliente y servidor.
+- `Modelo (Model)`: Lógica de negocio y entidades como Producto, Usuario y Descuento.
+- `Repositorio`: Acceso a datos mediante JPA.
+- `Seguridad`: Sistema de login y gestión de sesiones.
+
+---
+
+## 🧪 Pruebas Realizadas
+
+- ✅ Pruebas de interfaz (UI) en distintos dispositivos
+- ✅ Pruebas funcionales: catálogo, favoritos, promociones, chatbot, login
+- ✅ Pruebas de rendimiento: consultas simultáneas y respuesta del sistema
+- ✅ Validación de seguridad en sesiones y manipulación de datos
+
+---
+
+## 📦 Instalación del Proyecto
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/N1CKWEB/FitCompras-Eccomerce.git
+```
+
+---
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
-## 📞 Contacto
-
-Para consultas o sugerencias, puedes contactarnos a través de:
-
-- **Correo Electrónico**: soporte@fitcompras.com
-- **LinkedIn**: [FitCompras](https://www.linkedin.com/company/fitcompras)
-- **Sitio Web**: [www.fitcompras.com](https://www.fitcompras.com)
+**Este proyecto está licenciado bajo MIT License.**
+**Consultá el archivo LICENSE para más información.**
