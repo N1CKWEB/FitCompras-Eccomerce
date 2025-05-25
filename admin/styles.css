@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+#sidebar {
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #343a40;
+}
+
+#sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#sidebar .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#sidebar .nav-link.active {
+    color: #fff;
+    background: #961818;
+}
+
+/* Main content */
+main {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e3e6f0;
+    font-weight: 500;
+}
+
+/* Tables */
+.table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.table .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Forms */
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Alerts */
+.alert {
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        z-index: 1050;
+    }
+    
+    #sidebar.show {
+        left: 0;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        display: none;
+    }
+    
+    .overlay.show {
+        display: block;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Utilities */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.img-preview {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Loader */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

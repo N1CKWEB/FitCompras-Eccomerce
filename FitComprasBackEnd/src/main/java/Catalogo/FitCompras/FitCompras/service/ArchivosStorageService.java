@@ -24,7 +24,7 @@ public class ArchivosStorageService {
 
         try {
             Files.copy(archivo.getInputStream(), destino, StandardCopyOption.REPLACE_EXISTING);
-            return destino.toString(); // O bien retornar solo el nombre si luego servirás la imagen desde un endpoint
+            return destino.toString();
         } catch (IOException e) {
             throw new RuntimeException("Error al guardar imagen", e);
         }

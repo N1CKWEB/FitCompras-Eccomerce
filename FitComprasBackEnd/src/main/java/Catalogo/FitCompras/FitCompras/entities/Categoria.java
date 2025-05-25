@@ -1,5 +1,6 @@
 package Catalogo.FitCompras.FitCompras.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Categoria {
 
     private String nombre;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<SubCategoria> subCategorias;
 }

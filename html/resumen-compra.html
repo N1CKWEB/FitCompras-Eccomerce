@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumen de Compra</title>
+    <title>Resumen de Compra - FitCompras</title>
+    <link rel="stylesheet" href="/Estilos/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
+    <header>
+        <div class="top-nav">
+            <div class="logo-principal"><a class="logo" href="/index.html">FitCompras</a></div>
+            <div class="cart-btn">
+                <a href="/html/cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
+                </a>
+            </div>
+            <button class="login-btn" onclick="location.href='html/login.html'">Ingresar</button>
+        </div>
+    </header>
 
     <div class="container mx-auto p-6 mt-6 bg-white shadow-md rounded-lg">
         <h2 class="text-2xl font-semibold mb-4">Resumen de Compra</h2>
@@ -28,13 +42,24 @@
             </tbody>
         </table>
 
-        <div class="mt-4 text-right">
-            <button id="btn-finalizar" class="btn btn-primary">Finalizar Compra</button>
+        <div class="mt-6 flex justify-between items-center">
+            <a href="/html/cart.html" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                Volver al carrito
+            </a>
+            <button id="btn-finalizar" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Finalizar Compra
+            </button>
         </div>
     </div>
 
+    <footer class="mt-8 py-4 bg-gray-800 text-white text-center">
+        <p>© 2025 FitCompras - Todos los derechos reservados</p>
+    </footer>
+
     <script src="/Dinamica/carrito.js"></script>
+    <script src="/Dinamica/productos.js"></script>
     <script src="/Dinamica/resumen-compra.js"></script>
+    
 </body>
 
 </html>

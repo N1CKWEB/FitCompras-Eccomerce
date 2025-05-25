@@ -1,13 +1,17 @@
 package Catalogo.FitCompras.FitCompras.controller;
 
 import Catalogo.FitCompras.FitCompras.dto.ProductoDTO;
+import Catalogo.FitCompras.FitCompras.entities.Storage;
 import Catalogo.FitCompras.FitCompras.entities.SubCategoria;
 import Catalogo.FitCompras.FitCompras.repositories.SubCategoriaRepository;
 import Catalogo.FitCompras.FitCompras.service.ArchivosStorageService;
 import Catalogo.FitCompras.FitCompras.service.ProductoService;
+import Catalogo.FitCompras.FitCompras.service.StorageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import java.util.List;
@@ -19,13 +23,17 @@ public class ProductoController {
     private final ProductoService productoService;
     private final ArchivosStorageService archivosStorageService;
     private final SubCategoriaRepository subCategoriaRepository;
+    private final StorageService storageService;
 
-    public ProductoController(ProductoService productoService,
-                               ArchivosStorageService fileStorageService,
-                               SubCategoriaRepository subCategoriaRepository) {
+    public ProductoController(
+            ProductoService productoService,
+            ArchivosStorageService fileStorageService,
+            SubCategoriaRepository subCategoriaRepository,
+            StorageService storageService) {
         this.productoService = productoService;
         this.archivosStorageService = fileStorageService;
         this.subCategoriaRepository = subCategoriaRepository;
+        this.storageService = storageService;
     }
 
     @PostMapping
@@ -33,21 +41,28 @@ public class ProductoController {
             @RequestParam("nombre") String nombre,
             @RequestParam("precio") double precio,
             @RequestParam(value = "imagen", required = false) MultipartFile imagen,
-            @RequestParam("subCategoriaId") Long subCategoriaId) { // Cambié el nombre del parámetro
-    
+            @RequestParam("subCategoriaId") Long subCategoriaId) {
+
         ProductoDTO dto = new ProductoDTO();
         dto.setNombre(nombre);
         dto.setPrecio(precio);
-    
-        // Buscar la subcategoría usando el ID
+
         SubCategoria subCategoria = subCategoriaRepository.findById(subCategoriaId)
                 .orElseThrow(() -> new RuntimeException("Subcategoría no encontrada"));
         dto.setSubCategoria(subCategoria);
-    
-        ProductoDTO creado = productoService.crearProducto(dto, imagen);
+
+        Storage imagenGuardada = null;
+        if (imagen != null && !imagen.isEmpty()) {
+            try {
+                imagenGuardada = storageService.guardarArchivo(imagen, "producto", null); // o pasar ID si aplica
+            } catch (IOException e) {
+                throw new RuntimeException("Error al guardar la imagen", e);
+            }
+        }
+
+        ProductoDTO creado = productoService.crearProducto(dto, imagenGuardada);
         return ResponseEntity.ok(creado);
     }
-
 
     @GetMapping
     public ResponseEntity<List<ProductoDTO>> obtenerProductos() {
@@ -70,7 +85,16 @@ public class ProductoController {
             subCategoriaRepository.findById(subCategoriaId).ifPresent(dto::setSubCategoria);
         }
 
-        ProductoDTO actualizado = productoService.actualizarProducto(id, dto, imagen);
+        Storage imagenGuardada = null;
+        if (imagen != null && !imagen.isEmpty()) {
+            try {
+                imagenGuardada = storageService.guardarArchivo(imagen, "producto", id);
+            } catch (IOException e) {
+                throw new RuntimeException("Error al guardar la imagen", e);
+            }
+        }
+
+        ProductoDTO actualizado = productoService.actualizarProducto(id, dto, imagenGuardada);
         return ResponseEntity.ok(actualizado);
     }
 

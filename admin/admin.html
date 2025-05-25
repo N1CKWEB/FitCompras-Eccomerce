@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - FitCompras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header mb-4">
+                        <h3 class="text-light">FitCompras Admin</h3>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" id="dashboard-link">
+                                <i class="fas fa-tachometer-alt me-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="categorias-link">
+                                <i class="fas fa-tags me-2"></i>
+                                Categorías
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="subcategorias-link">
+                                <i class="fas fa-tag me-2"></i>
+                                Subcategorías
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="productos-link">
+                                <i class="fas fa-box me-2"></i>
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="productos-link">
+                                <i class="fas fa-box me-2"></i>
+                                Descuento
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="faqs-link" href="#">
+                                <i class="fas fa-question-circle"></i> FAQs
+                            </a>
+                        </li>
+                        <li class="nav-item mt-5">
+                            <a class="nav-link" href="/index.html">
+                                <i class="fas fa-store me-2"></i>
+                                Ver Tienda
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2" id="page-title">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary d-md-none" id="sidebarToggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alert para mensajes -->
+                <div class="alert alert-dismissible fade" role="alert" id="alert-message">
+                    <span id="alert-content"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <!-- Contenido principal -->
+                <div id="main-content">
+                    <!-- Dashboard -->
+                    <div id="dashboard-content" class="content-section">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card bg-danger text-white h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase">Categorías</h6>
+                                                <h1 class="display-4" id="categorias-count">0</h1>
+                                            </div>
+                                            <i class="fas fa-tags fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a href="#" class="text-white stretched-link" id="dashboard-categorias-link">Ver Detalles</a>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card bg-success text-white h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase">Subcategorías</h6>
+                                                <h1 class="display-4" id="subcategorias-count">0</h1>
+                                            </div>
+                                            <i class="fas fa-tag fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a href="#" class="text-white stretched-link" id="dashboard-subcategorias-link">Ver Detalles</a>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card bg-warning text-white h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase">Productos</h6>
+                                                <h1 class="display-4" id="productos-count">0</h1>
+                                            </div>
+                                            <i class="fas fa-box fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a href="#" class="text-white stretched-link" id="dashboard-productos-link">Ver Detalles</a>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Resumen de Productos por Categoría
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="productosChart" width="100%" height="40"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+     
+                    <!-- Categorías -->
+                    <div id="categorias-content" class="content-section d-none">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h3>Gestión de Categorías</h3>
+                            <button class="btn btn-danger" id="nueva-categoria-btn">
+                                <i class="fas fa-plus me-1"></i> Nueva Categoría
+                            </button>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Categorías Existentes
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" id="categorias-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Subcategorías</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="categorias-table-body">
+                                            <!-- Datos de categorías -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="categorias-loading" class="text-center py-3">
+                                    <div class="spinner-border text-danger" role="status">
+                                        <span class="visually-hidden">Cargando...</span>
+                                    </div>
+                                    <p class="mt-2">Cargando categorías...</p>
+                                </div>
+                                <div id="categorias-empty" class="text-center py-3 d-none">
+                                    <p class="text-muted">No hay categorías registradas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subcategorías -->
+                    <div id="subcategorias-content" class="content-section d-none">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h3>Gestión de Subcategorías</h3>
+                            <button class="btn btn-danger" id="nueva-subcategoria-btn">
+                                <i class="fas fa-plus me-1"></i> Nueva Subcategoría
+                            </button>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Subcategorías Existentes
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" id="subcategorias-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Categoría</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="subcategorias-table-body">
+                                            <!-- Datos de subcategorías -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="subcategorias-loading" class="text-center py-3">
+                                    <div class="spinner-border text-danger" role="status">
+                                        <span class="visually-hidden">Cargando...</span>
+                                    </div>
+                                    <p class="mt-2">Cargando subcategorías...</p>
+                                </div>
+                                <div id="subcategorias-empty" class="text-center py-3 d-none">
+                                    <p class="text-muted">No hay subcategorías registradas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productos -->
+                    <div id="productos-content" class="content-section d-none">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h3>Gestión de Productos</h3>
+                            <button class="btn btn-danger" id="nuevo-producto-btn">
+                                <i class="fas fa-plus me-1"></i> Nuevo Producto
+                            </button>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-table me-1"></i>
+                                        Productos Existentes
+                                    </div>
+                                    <div class="d-flex">
+                                        <select class="form-select me-2" id="filtro-subcategoria">
+                                            <option value="">Todas las subcategorías</option>
+                                        </select>
+                                        <input type="text" class="form-control" placeholder="Buscar producto..." id="buscar-producto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" id="productos-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Subcategoría</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productos-table-body">
+                                            <!-- Datos de productos -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="productos-loading" class="text-center py-3">
+                                    <div class="spinner-border text-danger" role="status">
+                                        <span class="visually-hidden">Cargando...</span>
+                                    </div>
+                                    <p class="mt-2">Cargando productos...</p>
+                                </div>
+                                <div id="productos-empty" class="text-center py-3 d-none">
+                                    <p class="text-muted">No hay productos registrados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Productos -->
+                     <div id="productos-content" class="content-section d-none">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h3>Gestión de Productos</h3>
+                            <button class="btn btn-danger" id="nuevo-producto-btn">
+                                <i class="fas fa-plus me-1"></i> Nuevo Producto
+                            </button>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-table me-1"></i>
+                                        Productos Existentes
+                                    </div>
+                                    <div class="d-flex">
+                                        <select class="form-select me-2" id="filtro-subcategoria">
+                                            <option value="">Todas las subcategorías</option>
+                                        </select>
+                                        <input type="text" class="form-control" placeholder="Buscar producto..." id="buscar-producto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" id="productos-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Subcategoría</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productos-table-body">
+                                            <!-- Datos de productos -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="productos-loading" class="text-center py-3">
+                                    <div class="spinner-border text-danger" role="status">
+                                        <span class="visually-hidden">Cargando...</span>
+                                    </div>
+                                    <p class="mt-2">Cargando productos...</p>
+                                </div>
+                                <div id="productos-empty" class="text-center py-3 d-none">
+                                    <p class="text-muted">No hay productos registrados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="faqs-content" class="content-section d-none">
+                        <h2>Gestión de FAQs</h2>
+                        <button id="nueva-faq-btn" class="btn btn-primary mb-3">Nueva FAQ</button>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Pregunta</th>
+                                    <th>Respuesta</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="faqs-table-body"></tbody>
+                        </table>
+                        <div id="faqs-empty" class="alert alert-info d-none">No hay FAQs disponibles.</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+<div class="modal fade" id="faq-modal" tabindex="-1" aria-labelledby="faq-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="faq-modal-label">Nueva FAQ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="faq-form">
+                    <input type="hidden" id="faq-id">
+                    <div class="mb-3">
+                        <label for="faq-pregunta" class="form-label">Pregunta</label>
+                        <input type="text" class="form-control" id="faq-pregunta" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="faq-respuesta" class="form-label">Respuesta</label>
+                        <textarea class="form-control" id="faq-respuesta" rows="3" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="guardar-faq-btn" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Modal para Categoría -->
+    <div class="modal fade" id="categoria-modal" tabindex="-1" aria-labelledby="categoria-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoria-modal-label">Nueva Categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="categoria-form">
+                        <input type="hidden" id="categoria-id">
+                        <div class="mb-3">
+                            <label for="categoria-nombre" class="form-label">Nombre de la Categoría</label>
+                            <input type="text" class="form-control" id="categoria-nombre" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="guardar-categoria-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Subcategoría -->
+    <div class="modal fade" id="subcategoria-modal" tabindex="-1" aria-labelledby="subcategoria-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subcategoria-modal-label">Nueva Subcategoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="subcategoria-form">
+                        <input type="hidden" id="subcategoria-id">
+                        <div class="mb-3">
+                            <label for="subcategoria-nombre" class="form-label">Nombre de la Subcategoría</label>
+                            <input type="text" class="form-control" id="subcategoria-nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subcategoria-categoria" class="form-label">Categoría</label>
+                            <select class="form-select" id="subcategoria-categoria" required>
+                                <option value="">Seleccione una categoría</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="guardar-subcategoria-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Producto -->
+    <div class="modal fade" id="producto-modal" tabindex="-1" aria-labelledby="producto-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="producto-modal-label">Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="producto-form">
+                        <input type="hidden" id="producto-id">
+                        <div class="mb-3">
+                            <label for="producto-nombre" class="form-label">Nombre del Producto</label>
+                            <input type="text" class="form-control" id="producto-nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="producto-precio" class="form-label">Precio</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="producto-precio" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="producto-subcategoria" class="form-label">Subcategoría</label>
+                            <select class="form-select" id="producto-subcategoria" required>
+                                <option value="">Seleccione una subcategoría</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="producto-imagen" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form-control" id="producto-imagen" accept="image/*">
+                            <div class="form-text">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 5MB</div>
+                        </div>
+                        <div id="imagen-preview-container" class="text-center mb-3 d-none">
+                            <img id="imagen-preview" src="/placeholder.svg" alt="Vista previa" class="img-thumbnail" style="max-height: 200px;">
+                            <button type="button" class="btn btn-sm btn-danger mt-2" id="eliminar-imagen-btn">
+                                <i class="fas fa-trash me-1"></i> Eliminar imagen
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="guardar-producto-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div class="modal fade" id="confirmar-eliminar-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmar-eliminar-mensaje">¿Está seguro que desea eliminar este elemento?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmar-eliminar-btn">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

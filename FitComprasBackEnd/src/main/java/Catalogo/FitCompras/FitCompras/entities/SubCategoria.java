@@ -1,5 +1,6 @@
 package Catalogo.FitCompras.FitCompras.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+
 public class SubCategoria {
 
     @Id
@@ -18,6 +20,7 @@ public class SubCategoria {
     private String nombre;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 }

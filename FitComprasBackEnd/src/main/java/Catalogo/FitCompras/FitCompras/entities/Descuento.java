@@ -1,5 +1,6 @@
 package Catalogo.FitCompras.FitCompras.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,4 +18,9 @@ public class Descuento {
 
     private String descripcion;
     private Double porcentaje;
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
 }

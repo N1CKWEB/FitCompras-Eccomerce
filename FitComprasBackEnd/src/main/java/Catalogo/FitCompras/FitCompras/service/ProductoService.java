@@ -2,6 +2,7 @@ package Catalogo.FitCompras.FitCompras.service;
 
 import Catalogo.FitCompras.FitCompras.dto.ProductoDTO;
 import Catalogo.FitCompras.FitCompras.entities.Producto;
+import Catalogo.FitCompras.FitCompras.entities.Storage;
 import Catalogo.FitCompras.FitCompras.repositories.ProductoRepository;
 import Catalogo.FitCompras.FitCompras.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
@@ -21,14 +22,13 @@ public class ProductoService {
         this.archivosStorageService = fileStorageService;
     }
 
-    public ProductoDTO crearProducto(ProductoDTO dto, MultipartFile imagen) {
+    public ProductoDTO crearProducto(ProductoDTO dto, Storage imagenGuardada) {
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
         producto.setPrecio(dto.getPrecio());
 
-        if (imagen != null && !imagen.isEmpty()) {
-            String rutaImagen = archivosStorageService.guardarImagen(imagen);
-            producto.setImagenUrl(rutaImagen);
+        if (imagenGuardada != null) {
+            producto.setImagenUrl(imagenGuardada.getNombreGuardado()); // o una URL completa si lo servís por HTTP
         }
 
         producto.setSubCategoria(dto.getSubCategoria());
@@ -43,16 +43,15 @@ public class ProductoService {
                 .collect(Collectors.toList());
     }
 
-    public ProductoDTO actualizarProducto(Long id, ProductoDTO dto, MultipartFile imagen) {
+    public ProductoDTO actualizarProducto(Long id, ProductoDTO dto, Storage imagenGuardada) {
         Producto producto = productoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado"));
 
         producto.setNombre(dto.getNombre());
         producto.setPrecio(dto.getPrecio());
 
-        if (imagen != null && !imagen.isEmpty()) {
-            String rutaImagen = archivosStorageService.guardarImagen(imagen);
-            producto.setImagenUrl(rutaImagen);
+        if (imagenGuardada != null) {
+            producto.setImagenUrl(imagenGuardada.getNombreOriginal());
         }
 
         producto.setSubCategoria(dto.getSubCategoria());
@@ -73,7 +72,9 @@ public class ProductoService {
                 producto.getNombre(),
                 producto.getPrecio(),
                 producto.getImagenUrl(), // cambiado
-                producto.getSubCategoria()
+                producto.getSubCategoria(),
+                producto.calcularPrecioConDescuento()
+
         );
     }
 }
