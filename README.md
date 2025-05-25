@@ -27,8 +27,7 @@ FitCompras es una plataforma de comercio electrónico diseñada para ofrecer una
 - **Herramientas y Librerías**:
   - Bootstrap para diseño responsivo
   - jQuery para interactividad
-  - Hibernate para ORM
-  - Thymeleaf como motor de plantillas
+  - Hibernate/JPA para ORM
 
 ## 📦 Instalación
 
